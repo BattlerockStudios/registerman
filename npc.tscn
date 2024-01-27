@@ -1,15 +1,139 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkd5ivpu68rty"]
+[gd_scene load_steps=19 format=3 uid="uid://dkd5ivpu68rty"]
 
-[ext_resource type="Texture2D" uid="uid://bw43imaejp83l" path="res://img/test.jpg" id="1_dstp4"]
+[ext_resource type="Texture2D" uid="uid://c2mcj0qockx6d" path="res://Characters/Cowboy_v1.png" id="1_puhv6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8d8h"]
+atlas = ExtResource("1_puhv6")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms8t7"]
+atlas = ExtResource("1_puhv6")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qct6b"]
+atlas = ExtResource("1_puhv6")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpagf"]
+atlas = ExtResource("1_puhv6")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8g24"]
+atlas = ExtResource("1_puhv6")
+region = Rect2(0, 256, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj3up"]
+atlas = ExtResource("1_puhv6")
+region = Rect2(64, 256, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uqps"]
+atlas = ExtResource("1_puhv6")
+region = Rect2(128, 256, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6hy5"]
+atlas = ExtResource("1_puhv6")
+region = Rect2(192, 256, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4a2n"]
+atlas = ExtResource("1_puhv6")
+region = Rect2(0, 384, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qvuo"]
+atlas = ExtResource("1_puhv6")
+region = Rect2(64, 384, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6vox"]
+atlas = ExtResource("1_puhv6")
+region = Rect2(128, 384, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fo0is"]
+atlas = ExtResource("1_puhv6")
+region = Rect2(192, 384, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5egva"]
+atlas = ExtResource("1_puhv6")
+region = Rect2(0, 128, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uigbx"]
+atlas = ExtResource("1_puhv6")
+region = Rect2(64, 128, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cbwg"]
+atlas = ExtResource("1_puhv6")
+region = Rect2(128, 128, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roa1q"]
+atlas = ExtResource("1_puhv6")
+region = Rect2(192, 128, 64, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dealf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_dstp4")
+"texture": SubResource("AtlasTexture_d8d8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms8t7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qct6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpagf")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8g24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj3up")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uqps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6hy5")
+}],
+"loop": true,
+"name": &"walk_away",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4a2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qvuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6vox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fo0is")
+}],
+"loop": true,
+"name": &"walk_forward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5egva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uigbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cbwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roa1q")
+}],
+"loop": true,
+"name": &"walk_sideways",
 "speed": 5.0
 }]
 
@@ -18,3 +142,5 @@ animations = [{
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_dealf")
+animation = &"idle"
+autoplay = "idle"
