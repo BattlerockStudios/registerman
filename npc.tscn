@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dkd5ivpu68rty"]
+[gd_scene load_steps=17 format=3 uid="uid://dkd5ivpu68rty"]
 
 [ext_resource type="Texture2D" uid="uid://c2mcj0qockx6d" path="res://Characters/Cowboy_v1.png" id="1_puhv6"]
 
@@ -9,14 +9,6 @@ region = Rect2(0, 0, 64, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ms8t7"]
 atlas = ExtResource("1_puhv6")
 region = Rect2(64, 0, 64, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qct6b"]
-atlas = ExtResource("1_puhv6")
-region = Rect2(128, 0, 64, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hpagf"]
-atlas = ExtResource("1_puhv6")
-region = Rect2(192, 0, 64, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8g24"]
 atlas = ExtResource("1_puhv6")
@@ -74,16 +66,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ms8t7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qct6b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hpagf")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -134,7 +120,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_sideways",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [node name="NPC" type="Node3D"]
