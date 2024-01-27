@@ -16,6 +16,5 @@ animations = [{
 [node name="NPC" type="Node3D"]
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50661, -1.8646, -1.65229)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_dealf")
