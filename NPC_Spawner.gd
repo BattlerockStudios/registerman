@@ -1,14 +1,13 @@
 extends Node
 
-var cowboy_scene = preload("res://npc_cowboy.tscn")
-var woman_scene = preload("res://npc_woman.tscn")
+var cowboy = preload("res://npc_cowboy.tscn")
+var woman = preload("res://npc_woman.tscn")
 
 @onready var spawnLocations = [$SpawnPath1/SpawnLocation, $SpawnPath2/SpawnLocation, $SpawnPath3/SpawnLocation, $SpawnPath4/SpawnLocation]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_on_spawn_npc(0, cowboy_scene)
-	_on_spawn_npc(1, woman_scene)
+	_on_spawn_npc(0, cowboy)
 	pass
 
 func _on_spawn_npc(index: int, resource: Resource) -> void:
@@ -23,11 +22,6 @@ func _on_spawn_npc(index: int, resource: Resource) -> void:
 	
 	# And give it a random offset.
 	npc_spawn_location.progress_ratio = 0
-
-	# var player_position = $Player.position
-
-	npc.position = npc_spawn_location.position;
-	# npc.initialize(npc_spawn_location.position, Vector3.ZERO)
 
 	# Spawn the npc by adding it to the Main scene.
 	npc_spawn_location.add_child(npc)

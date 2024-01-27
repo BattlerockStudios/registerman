@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bacpxgom84la0"
-path.s3tc="res://.godot/imported/Counter.png-860b456874fafdd0d9efc9e4af253c2d.s3tc.ctex"
+path="res://.godot/imported/Counter.png-860b456874fafdd0d9efc9e4af253c2d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Level/Counter.png"
-dest_files=["res://.godot/imported/Counter.png-860b456874fafdd0d9efc9e4af253c2d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Counter.png-860b456874fafdd0d9efc9e4af253c2d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

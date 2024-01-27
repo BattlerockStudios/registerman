@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwtd6lja0qkc0"
-path.s3tc="res://.godot/imported/Door.001.png-9ff246a2b23d448afcc4c3dff7d726a5.s3tc.ctex"
+path="res://.godot/imported/Door.001.png-9ff246a2b23d448afcc4c3dff7d726a5.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Level/Door.001.png"
-dest_files=["res://.godot/imported/Door.001.png-9ff246a2b23d448afcc4c3dff7d726a5.s3tc.ctex"]
+dest_files=["res://.godot/imported/Door.001.png-9ff246a2b23d448afcc4c3dff7d726a5.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -3,27 +3,26 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cc8h5xocq6pj5"
-path.s3tc="res://.godot/imported/Main_Scene_DoorTexture.png-e86c78c77d21fa5e70df81551623282d.s3tc.ctex"
+path="res://.godot/imported/Main_Scene_DoorTexture.png-e86c78c77d21fa5e70df81551623282d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={}
 
 [deps]
 
 source_file="res://Level/Main_Scene_DoorTexture.png"
-dest_files=["res://.godot/imported/Main_Scene_DoorTexture.png-e86c78c77d21fa5e70df81551623282d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Main_Scene_DoorTexture.png-e86c78c77d21fa5e70df81551623282d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=2
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=1
 roughness/src_normal=""

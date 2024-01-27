@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3aatsow3wuyn"
-path.s3tc="res://.godot/imported/CounterTexture.png-9a5e26dca9749b049eeee5552ff60e3f.s3tc.ctex"
+path="res://.godot/imported/CounterTexture.png-9a5e26dca9749b049eeee5552ff60e3f.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Level/CounterTexture.png"
-dest_files=["res://.godot/imported/CounterTexture.png-9a5e26dca9749b049eeee5552ff60e3f.s3tc.ctex"]
+dest_files=["res://.godot/imported/CounterTexture.png-9a5e26dca9749b049eeee5552ff60e3f.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
