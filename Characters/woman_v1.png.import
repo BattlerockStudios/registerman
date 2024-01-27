@@ -2,28 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c13o0iaavxvbi"
-path.s3tc="res://.godot/imported/Main_Scene_CounterTexture.png-0cc9f602632f5b6e35b1b3cff215b7dd.s3tc.ctex"
+uid="uid://dlv2rxa5tb7hj"
+path="res://.godot/imported/woman_v1.png-daa824c04b70b65418b194478c4e4647.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://Level/Main_Scene_CounterTexture.png"
-dest_files=["res://.godot/imported/Main_Scene_CounterTexture.png-0cc9f602632f5b6e35b1b3cff215b7dd.s3tc.ctex"]
+source_file="res://Characters/woman_v1.png"
+dest_files=["res://.godot/imported/woman_v1.png-daa824c04b70b65418b194478c4e4647.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=2
+compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=1
 roughness/src_normal=""
