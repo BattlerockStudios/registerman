@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtrkpvs5x36up"]
+
+[ext_resource type="Script" path="res://NPC_Spawner.gd" id="1_2xd5b"]
+
+[sub_resource type="Curve3D" id="Curve3D_kx027"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2, 0, -2, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 0, 0, -2, 0, 2, 0, 0, 0, 0, 0, 0, -2, 0, -2, 0, 0, 0, 0, 0, 0, 2, 0, -2),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="NPC_Spawner" type="Node"]
+script = ExtResource("1_2xd5b")
+
+[node name="SpawnPath" type="Path3D" parent="."]
+curve = SubResource("Curve3D_kx027")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 0, -2)

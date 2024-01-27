@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkd5ivpu68rty"]
+
+[ext_resource type="Texture2D" uid="uid://bw43imaejp83l" path="res://img/test.jpg" id="1_dstp4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dealf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dstp4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NPC" type="Node3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50661, -1.8646, -1.65229)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_dealf")
