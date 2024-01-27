@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwpyuphn6c37q"]
+[gd_scene load_steps=6 format=3 uid="uid://bwpyuphn6c37q"]
 
 [ext_resource type="Script" path="res://main_level.gd" id="1_3shja"]
 [ext_resource type="PackedScene" uid="uid://dtrkpvs5x36up" path="res://npc_spawner.tscn" id="2_6otht"]
@@ -6,6 +6,8 @@
 [sub_resource type="Environment" id="Environment_64k7t"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_c4727"]
+
+[sub_resource type="Curve3D" id="Curve3D_sqd1y"]
 
 [node name="MainLevel" type="Node3D"]
 script = ExtResource("1_3shja")
@@ -28,3 +30,8 @@ mesh = SubResource("BoxMesh_c4727")
 
 [node name="NPC_Spawner" parent="." instance=ExtResource("2_6otht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4)
+
+[node name="CheckoutLanePath" type="Path3D" parent="."]
+curve = SubResource("Curve3D_sqd1y")
+
+[node name="PathFollow" type="PathFollow3D" parent="CheckoutLanePath"]
