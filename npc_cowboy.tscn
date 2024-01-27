@@ -126,6 +126,7 @@ animations = [{
 [node name="NPC" type="Node3D"]
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+pixel_size = 0.015
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_dealf")
 animation = &"idle"

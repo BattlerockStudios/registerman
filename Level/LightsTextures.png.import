@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dewadn7ks1cxs"
-path="res://.godot/imported/Main_Scene_BuildingTexture.png-8104d432a9bed00fc398b84460866997.ctex"
+uid="uid://cf7b4gc8lhcgi"
+path="res://.godot/imported/LightsTextures.png-355d0ee3ab592918f2ef0020f706ee45.ctex"
 metadata={
 "vram_texture": false
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://Level/Main_Scene_BuildingTexture.png"
-dest_files=["res://.godot/imported/Main_Scene_BuildingTexture.png-8104d432a9bed00fc398b84460866997.ctex"]
+source_file="res://Level/LightsTextures.png"
+dest_files=["res://.godot/imported/LightsTextures.png-355d0ee3ab592918f2ef0020f706ee45.ctex"]
 
 [params]
 
@@ -20,7 +19,7 @@ compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=2
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
