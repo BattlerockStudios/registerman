@@ -6,7 +6,13 @@ var currPosition: Vector3
 var startTime: float = 0.1
 var timer: float = 0.1
 
-# func _set_follow_point()
+var completed: float = 1
+
+var npcPath
+
+
+func _set_follow_point(followPath):
+	npcPath = followPath
 
 
 # Called when the node enters the scene tree for the first time.
@@ -22,6 +28,11 @@ func _process(delta):
 	currPosition = global_position
 
 	timer -= delta
+
+	if npcPath.progress_ratio < completed:
+		npcPath.progress_ratio += delta * .05
+	else:
+		npcPath.progress_ratio = 1
 
 	if timer <= 0:
 		if currPosition != prevPosition:

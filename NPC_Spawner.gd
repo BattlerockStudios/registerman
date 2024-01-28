@@ -38,5 +38,7 @@ func _on_spawn_npc(index: int, resource: Resource) -> void:
 	# And give it a random offset.
 	npc_spawn_location.progress_ratio = 0
 
+	npc._set_follow_point(npc_spawn_location)
+
 	# Spawn the npc by adding it to the Main scene.
 	npc_spawn_location.add_child(npc)
