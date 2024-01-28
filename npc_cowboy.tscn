@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://dkd5ivpu68rty"]
+[gd_scene load_steps=18 format=3 uid="uid://dkd5ivpu68rty"]
 
+[ext_resource type="Script" path="res://npc.gd" id="1_88o6p"]
 [ext_resource type="Texture2D" uid="uid://c2mcj0qockx6d" path="res://Characters/Cowboy_v1.png" id="1_bdh35"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8d8h"]
@@ -124,10 +125,12 @@ animations = [{
 }]
 
 [node name="NPC" type="Node3D"]
+script = ExtResource("1_88o6p")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 pixel_size = 0.015
 billboard = 2
+texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_dealf")
 animation = &"idle"
 autoplay = "idle"

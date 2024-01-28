@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://main_level.gd" id="1_3shja"]
 [ext_resource type="PackedScene" uid="uid://dtrkpvs5x36up" path="res://npc_spawner.tscn" id="2_6otht"]
-[ext_resource type="PackedScene" uid="uid://bhkayeacyrgj1" path="res://Level/Main_Scene.glb" id="3_hs4ck"]
+[ext_resource type="PackedScene" uid="uid://ceh2rhlwcjm0j" path="res://Level/Main_Scene.glb" id="3_hs4ck"]
 
 [sub_resource type="Environment" id="Environment_64k7t"]
 
@@ -20,7 +20,9 @@ current = true
 size = 5.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.814116, 0.580703, 0, -0.580703, 0.814116, 0, 1.20985, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.20985, 0)
+visible = false
+shadow_enabled = true
 
 [node name="NPC_Spawner" parent="." instance=ExtResource("2_6otht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -32,3 +34,56 @@ curve = SubResource("Curve3D_sqd1y")
 
 [node name="ConvenienceStore" parent="." instance=ExtResource("3_hs4ck")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Lights" type="Node3D" parent="ConvenienceStore"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="ConvenienceStore/Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.57622, 0.78541, 0.147306)
+light_volumetric_fog_energy = 0.0
+spot_range = 10.0
+spot_angle = 60.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="ConvenienceStore/Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.57622, 0.78541, -7.9032)
+light_volumetric_fog_energy = 0.0
+spot_range = 10.0
+spot_angle = 60.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="ConvenienceStore/Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.42378, 0.78541, -7.9032)
+light_volumetric_fog_energy = 0.0
+spot_range = 10.0
+spot_angle = 60.0
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="ConvenienceStore/Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.42378, 0.78541, -11.9032)
+light_volumetric_fog_energy = 0.0
+spot_range = 10.0
+spot_angle = 60.0
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="ConvenienceStore/Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.57622, 0.78541, -11.9032)
+light_volumetric_fog_energy = 0.0
+spot_range = 10.0
+spot_angle = 60.0
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="ConvenienceStore/Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.57622, 0.78541, -3.9032)
+light_volumetric_fog_energy = 0.0
+spot_range = 10.0
+spot_angle = 60.0
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="ConvenienceStore/Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.42378, 0.78541, -3.9032)
+light_volumetric_fog_energy = 0.0
+spot_range = 10.0
+spot_angle = 60.0
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="ConvenienceStore/Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.42378, 0.78541, 0.0968027)
+light_volumetric_fog_energy = 0.0
+spot_range = 10.0
+spot_angle = 60.0
+
+[node name="Main_Scene" parent="." instance=ExtResource("3_hs4ck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43215, 0, 14.9987)

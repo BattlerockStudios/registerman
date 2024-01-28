@@ -1,27 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtrkpvs5x36up"]
+[gd_scene load_steps=4 format=3 uid="uid://dtrkpvs5x36up"]
 
 [ext_resource type="Script" path="res://NPC_Spawner.gd" id="1_2xd5b"]
+[ext_resource type="Curve3D" uid="uid://v0rdsivqy80d" path="res://Curves/curve1.tres" id="2_y46yk"]
 
-[sub_resource type="Curve3D" id="Curve3D_lq3ir"]
+[sub_resource type="Curve3D" id="Curve3D_wxf4e"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -5.72015, 0, -12.2915, 0, 0, 0, 0, 0, 0, -4.30092, 0, -12.2915, 0, 0, 0, 0, 0, 0, -4.36174, 0, -8.92584, 0, 0, 0, 0, 0, 0, -5.01053, 0, -4.83032, 0, 0, 0, 0, 0, 0, -4.58476, 0, -2.70146, 0, 0, 0, 0, 0, 0, -2.12682, -0.218764, -2.20053, 0, 0, 0, 0, 0, 0, 1.99067, -0.012403, -2.05333),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3.00652, 4.56726, -8.08018, 0, 0, 0, 0, 0, 0, 2.52519, 4.58551, -5.51632, 0, 0, 0, 0, 0, 0, 2.52458, 4.56726, -3.18968, 0, 0, 0, 0, 0, 0, 2.82781, 4.58551, -0.0510082, 0, 0, 0, 0, 0, 0, 2.78911, 4.57638, 1.92891, 0, 0, 0, 0, 0, 0, -0.993483, 4.49813, 1.95009),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
-point_count = 7
+point_count = 6
 
 [node name="NPC_Spawner" type="Node3D"]
 script = ExtResource("1_2xd5b")
 
 [node name="SpawnPath1" type="Path3D" parent="."]
-curve = SubResource("Curve3D_lq3ir")
+curve = ExtResource("2_y46yk")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath1"]
-transform = Transform3D(-4.37114e-08, 0, -0.999983, 0, 1, 0, 1, 0, -4.37106e-08, -5.72015, 0, -12.2915)
+transform = Transform3D(-4.37112e-08, 0, -0.999983, 0, 1, 0, 0.999995, 0, -4.37106e-08, -5.72015, 0, -12.2915)
 loop = false
 
 [node name="SpawnPath2" type="Path3D" parent="."]
-curve = SubResource("Curve3D_lq3ir")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99348, -4.49813, -3.95009)
+curve = SubResource("Curve3D_wxf4e")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath2"]
-transform = Transform3D(-4.37114e-08, 0, -0.999987, 0, 1, 0, 1, 0, -4.37108e-08, -5.72015, 0, -12.2915)
+transform = Transform3D(-0.982818, 0.00129075, 0.184502, -5.8207e-11, 0.99993, -0.00699555, -0.184511, -0.00687535, -0.982774, 3.00652, 4.56726, -8.08018)
 loop = false
