@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtrkpvs5x36up"]
+[gd_scene load_steps=7 format=3 uid="uid://dtrkpvs5x36up"]
 
 [ext_resource type="Script" path="res://NPC_Spawner.gd" id="1_2xd5b"]
 [ext_resource type="Curve3D" uid="uid://v0rdsivqy80d" path="res://Curves/curve1.tres" id="2_y46yk"]
@@ -17,31 +17,59 @@ _data = {
 }
 point_count = 10
 
+[sub_resource type="Curve3D" id="Curve3D_rncnd"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3.42501, 4.19617e-05, 1.64579, 0, 0, 0, 0, 0, 0, -0.513226, 4.19617e-05, 1.24039, 0, 0, 0, 0, 0, 0, -0.0933409, 4.19617e-05, -1.6409, 0, 0, 0, 0, 0, 0, -0.484269, 4.19617e-05, -2.90056, 0, 0, 0, 0, 0, 0, -1.06342, 4.19617e-05, -5.43435, 0, 0, 0, 0, 0, 0, -0.788325, 4.19617e-05, -7.41795, 0, 0, 0, 0, 0, 0, -1.51227, 4.19617e-05, -8.33011, 0, 0, 0, 0, 0, 0, -3.38003, 4.19617e-05, -8.17085, 0, 0, 0, 0, 0, 0, -3.58274, 4.19617e-05, -6.37547, 0, 0, 0, 0, 0, 0, -3.59721, 4.19617e-05, -1.11966, 0, 0, 0, 0, 0, 0, -4.26324, 4.19617e-05, 0.921852, 0, 0, 0, 0, 0, 0, -3.42347, 4.19617e-05, 1.96433),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 12
+
+[sub_resource type="Curve3D" id="Curve3D_dtelw"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.75266, -2.14577e-05, -8.02604, 0, 0, 0, 0, 0, 0, -6.05864, -2.14577e-05, -8.06948, 0, 0, 0, 0, 0, 0, -3.78546, -2.14577e-05, -8.43145, 0, 0, 0, 0, 0, 0, -0.947613, -2.14577e-05, -8.46041, 0, 0, 0, 0, 0, 0, 0.73193, -2.14577e-05, -8.30114, 0, 0, 0, 0, 0, 0, 1.68753, -2.14577e-05, -8.46041, 0, 0, 0, 0, 0, 0, 2.36804, -2.14577e-05, -5.28955, 0, 0, 0, 0, 0, 0, 2.33908, -2.14577e-05, -0.960381, 0, 0, 0, 0, 0, 0, 1.83232, -2.14577e-05, 0.603331, 0, 0, 0, 0, 0, 0, 1.6441, -2.14577e-05, 1.38519, 0, 0, 0, 0, 0, 0, -2.85882, -2.14577e-05, 1.81955),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 11
+
 [node name="NPC_Spawner" type="Node3D"]
 script = ExtResource("1_2xd5b")
 
 [node name="SpawnPath1" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0547569, 0)
 curve = ExtResource("2_y46yk")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath1" groups=["npc"]]
-transform = Transform3D(-0.136287, 0.0278293, -0.990255, 0.0277748, 0.99929, 0.0242606, 0.990195, -0.0241996, -0.136976, -1.49012e-08, 0, -2)
-progress = 15.4607
+transform = Transform3D(-4.37064e-08, 0, -0.99998, 0, 0.999963, 0, 0.999885, 0, -4.37105e-08, -5.72015, 0, -12.2915)
 loop = false
 
 [node name="SpawnPath2" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.568967, 0.261279, -3.95009)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.568967, 0.206522, -3.95009)
 curve = SubResource("Curve3D_0annh")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath2"]
-transform = Transform3D(-0.151986, -0.0872809, 0.984442, 0.0338603, 0.994955, 0.0934429, -0.987749, 0.0475373, -0.148274, 1.25514, -3.90997e-05, 1.92831)
-progress = 13.352
+transform = Transform3D(-0.0283539, 0, 0.999518, 0, 0.999905, 0, -0.999504, 0, -0.0283544, 4.97593, -3.91006e-05, -8.07294)
 loop = false
 
 [node name="SpawnPath3" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17221, -4.51127, -4.01499)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17221, -4.56603, -4.01499)
 curve = SubResource("Curve3D_wxf4e")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath3"]
-transform = Transform3D(-0.998032, 0.0454713, -0.04213, 0.0451515, 0.998849, 0.00856389, 0.0424766, 0.00664502, -0.998992, -1.53489, 4.57921, 2.03051)
-progress = 27.0087
+transform = Transform3D(0.0260163, -0.00720138, -0.999541, 6.98457e-10, 0.999872, -0.00720388, 0.999612, 0.000187425, 0.0260144, -7.70702, 4.55051, 2.17354)
+loop = false
+
+[node name="SpawnPath4" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17221, 0.0237558, -4.01499)
+curve = SubResource("Curve3D_rncnd")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath4"]
+transform = Transform3D(0.102391, 0, 0.994618, 0, 0.999906, 0, -0.994653, 0, 0.102387, 3.42501, 4.19617e-05, 1.64579)
+loop = false
+
+[node name="SpawnPath5" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17221, -0.100704, -4.01499)
+curve = SubResource("Curve3D_dtelw")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath5"]
+transform = Transform3D(0.0256314, 0, -0.999559, 0, 0.999906, 0, 0.999586, 0, 0.0256307, -7.75266, -2.14577e-05, -8.02604)
 loop = false

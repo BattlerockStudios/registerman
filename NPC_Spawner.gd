@@ -1,12 +1,18 @@
 extends Node
 
 @onready var spawnLocations = [
-	$SpawnPath1/SpawnLocation, $SpawnPath2/SpawnLocation, $SpawnPath3/SpawnLocation
+	$SpawnPath1/SpawnLocation,
+	$SpawnPath2/SpawnLocation,
+	$SpawnPath3/SpawnLocation,
+	$SpawnPath4/SpawnLocation,
+	$SpawnPath5/SpawnLocation
 ]
+
 @onready var cowboy = preload("res://npc_cowboy.tscn")
 @onready var woman = preload("res://npc_woman.tscn")
 @onready var boy = preload("res://npc_boy.tscn")
 @onready var dough = preload("res://npc_dough.tscn")
+@onready var banana = preload("res://npc_banana.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,6 +20,8 @@ func _ready():
 	_on_spawn_npc(0, cowboy)
 	_on_spawn_npc(1, woman)
 	_on_spawn_npc(2, boy)
+	_on_spawn_npc(3, dough)
+	_on_spawn_npc(4, banana)
 	pass
 
 

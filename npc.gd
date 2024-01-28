@@ -6,6 +6,8 @@ var currPosition: Vector3
 var startTime: float = 0.1
 var timer: float = 0.1
 
+# func _set_follow_point()
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +19,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	# var directionToTarget = (m_target.transform.position - transform.position).normalized;
 	currPosition = global_position
 
 	timer -= delta
