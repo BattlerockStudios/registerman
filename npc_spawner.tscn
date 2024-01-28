@@ -39,7 +39,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0547569, 0)
 curve = ExtResource("2_y46yk")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath1" groups=["npc"]]
-transform = Transform3D(-4.37064e-08, 0, -0.99998, 0, 0.999963, 0, 0.999885, 0, -4.37105e-08, -5.72015, 0, -12.2915)
+transform = Transform3D(-0.136282, 0.027829, -0.990257, 0.0277739, 0.999279, 0.0242607, 0.99016, -0.0241993, -0.136976, -1.49012e-08, 0, -2)
+progress = 15.4607
 loop = false
 
 [node name="SpawnPath2" type="Path3D" parent="."]
@@ -47,7 +48,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.568967, 0.206522, -3.95009)
 curve = SubResource("Curve3D_0annh")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath2"]
-transform = Transform3D(-0.0283539, 0, 0.999518, 0, 0.999905, 0, -0.999504, 0, -0.0283544, 4.97593, -3.91006e-05, -8.07294)
+transform = Transform3D(-0.151979, -0.0872807, 0.984442, 0.0338587, 0.994953, 0.093443, -0.987702, 0.0475373, -0.148274, 1.25514, -3.90997e-05, 1.92831)
+progress = 13.352
 loop = false
 
 [node name="SpawnPath3" type="Path3D" parent="."]
@@ -55,7 +57,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17221, -4.56603, -4.01499)
 curve = SubResource("Curve3D_wxf4e")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath3"]
-transform = Transform3D(0.0260163, -0.00720138, -0.999541, 6.98457e-10, 0.999872, -0.00720388, 0.999612, 0.000187425, 0.0260144, -7.70702, 4.55051, 2.17354)
+transform = Transform3D(-0.99803, 0.0454708, -0.0421295, 0.0451515, 0.998837, 0.00856377, 0.0424765, 0.00664494, -0.998979, -1.53489, 4.57921, 2.03051)
+progress = 27.0087
 loop = false
 
 [node name="SpawnPath4" type="Path3D" parent="."]
@@ -63,7 +66,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17221, 0.0237558, -4.01499)
 curve = SubResource("Curve3D_rncnd")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath4"]
-transform = Transform3D(0.102391, 0, 0.994618, 0, 0.999906, 0, -0.994653, 0, 0.102387, 3.42501, 4.19617e-05, 1.64579)
+transform = Transform3D(-0.778676, 0, -0.627245, 0, 0.999906, 0, 0.627267, 0, -0.778649, -3.42347, 4.19617e-05, 1.96433)
+progress = 26.3792
 loop = false
 
 [node name="SpawnPath5" type="Path3D" parent="."]
@@ -71,5 +75,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17221, -0.100704, -4.01499)
 curve = SubResource("Curve3D_dtelw")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath5"]
-transform = Transform3D(0.0256314, 0, -0.999559, 0, 0.999906, 0, 0.999586, 0, 0.0256307, -7.75266, -2.14577e-05, -8.02604)
+transform = Transform3D(-0.0960084, 0, 0.995267, 0, 0.999906, 0, -0.995289, 0, -0.0960063, -2.85882, -2.14577e-05, 1.81955)
+progress = 24.0344
 loop = false

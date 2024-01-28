@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ckk7g3wjor6vn"
-path.s3tc="res://.godot/imported/boy.png-6dbb85b517d3cc75b0e5a58d0ad36d4b.s3tc.ctex"
+path="res://.godot/imported/boy.png-6dbb85b517d3cc75b0e5a58d0ad36d4b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Characters/boy.png"
-dest_files=["res://.godot/imported/boy.png-6dbb85b517d3cc75b0e5a58d0ad36d4b.s3tc.ctex"]
+dest_files=["res://.godot/imported/boy.png-6dbb85b517d3cc75b0e5a58d0ad36d4b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
