@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://87c5w4jf0mlh"]
+[gd_scene load_steps=20 format=3 uid="uid://87c5w4jf0mlh"]
 
 [ext_resource type="Texture2D" uid="uid://ckk7g3wjor6vn" path="res://Characters/boy.png" id="1_b8guu"]
+[ext_resource type="Script" path="res://npc.gd" id="1_wmo0f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ggnl"]
 atlas = ExtResource("1_b8guu")
@@ -138,6 +139,7 @@ animations = [{
 }]
 
 [node name="NPC" type="Node3D"]
+script = ExtResource("1_wmo0f")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." groups=["npc"]]
 pixel_size = 0.015

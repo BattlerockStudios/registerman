@@ -1,0 +1,151 @@
+[gd_scene load_steps=20 format=3 uid="uid://5yqcqy6xbubs"]
+
+[ext_resource type="Script" path="res://npc.gd" id="1_xaons"]
+[ext_resource type="Texture2D" uid="uid://bhlkf5oib1gge" path="res://Characters/DoughMan_v1.png" id="2_1opmc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihpxj"]
+atlas = ExtResource("2_1opmc")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1okn"]
+atlas = ExtResource("2_1opmc")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0chy"]
+atlas = ExtResource("2_1opmc")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ckq0"]
+atlas = ExtResource("2_1opmc")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpxv5"]
+atlas = ExtResource("2_1opmc")
+region = Rect2(192, 256, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44tob"]
+atlas = ExtResource("2_1opmc")
+region = Rect2(0, 384, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyv1m"]
+atlas = ExtResource("2_1opmc")
+region = Rect2(64, 384, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2odge"]
+atlas = ExtResource("2_1opmc")
+region = Rect2(128, 384, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc8lm"]
+atlas = ExtResource("2_1opmc")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hj7k"]
+atlas = ExtResource("2_1opmc")
+region = Rect2(0, 128, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cg5v"]
+atlas = ExtResource("2_1opmc")
+region = Rect2(64, 128, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1qwa"]
+atlas = ExtResource("2_1opmc")
+region = Rect2(128, 128, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4dwp"]
+atlas = ExtResource("2_1opmc")
+region = Rect2(192, 128, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e2oo"]
+atlas = ExtResource("2_1opmc")
+region = Rect2(0, 256, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwsea"]
+atlas = ExtResource("2_1opmc")
+region = Rect2(64, 256, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uebpw"]
+atlas = ExtResource("2_1opmc")
+region = Rect2(128, 256, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dealf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihpxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1okn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0chy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ckq0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpxv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44tob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyv1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2odge")
+}],
+"loop": true,
+"name": &"walk_away",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mc8lm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hj7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cg5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1qwa")
+}],
+"loop": true,
+"name": &"walk_forward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4dwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e2oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwsea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uebpw")
+}],
+"loop": true,
+"name": &"walk_sideways",
+"speed": 4.0
+}]
+
+[node name="NPC" type="Node3D" groups=["npc"]]
+script = ExtResource("1_xaons")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+pixel_size = 0.015
+billboard = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_dealf")
+animation = &"walk_sideways"
+autoplay = "idle"
+frame_progress = 0.466664
