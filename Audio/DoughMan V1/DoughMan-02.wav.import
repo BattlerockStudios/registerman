@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://doxma1hgymp2"
+path="res://.godot/imported/DoughMan-02.wav-3c1210d1fefab4e6884ae7e1d5e855d8.sample"
+
+[deps]
+
+source_file="res://Audio/DoughMan V1/DoughMan-02.wav"
+dest_files=["res://.godot/imported/DoughMan-02.wav-3c1210d1fefab4e6884ae7e1d5e855d8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

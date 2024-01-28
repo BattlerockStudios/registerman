@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c2ggwxgkhd1rq"
+path="res://.godot/imported/Boy-04.wav-e9c2286ff2fe774c010ad1b9c59bb17d.sample"
+
+[deps]
+
+source_file="res://Audio/Boy v1/Boy-04.wav"
+dest_files=["res://.godot/imported/Boy-04.wav-e9c2286ff2fe774c010ad1b9c59bb17d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

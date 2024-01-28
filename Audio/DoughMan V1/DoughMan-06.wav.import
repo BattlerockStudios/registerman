@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://66sqbvtn3xii"
+path="res://.godot/imported/DoughMan-06.wav-05816f871462f69fcecfc8a1c5ec8b4b.sample"
+
+[deps]
+
+source_file="res://Audio/DoughMan V1/DoughMan-06.wav"
+dest_files=["res://.godot/imported/DoughMan-06.wav-05816f871462f69fcecfc8a1c5ec8b4b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

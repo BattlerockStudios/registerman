@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ci1obhihwipg6"
+path="res://.godot/imported/Cowboy-06.wav-89cf607e4ff80ce8f823a71202b45478.sample"
+
+[deps]
+
+source_file="res://Audio/Cowboy V1/Cowboy-06.wav"
+dest_files=["res://.godot/imported/Cowboy-06.wav-89cf607e4ff80ce8f823a71202b45478.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

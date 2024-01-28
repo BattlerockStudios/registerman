@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dyih5rwe23s6l"
+path="res://.godot/imported/BananaMan-04.wav-64538ab2cf6931c65774a2ac05d0e3f3.sample"
+
+[deps]
+
+source_file="res://Audio/BananaMan V2/BananaMan-04.wav"
+dest_files=["res://.godot/imported/BananaMan-04.wav-64538ab2cf6931c65774a2ac05d0e3f3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

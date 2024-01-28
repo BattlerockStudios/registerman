@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dumc0atf6jmrm"
+path="res://.godot/imported/Karen-15.wav-363ff4b348d5b82e073f3c2e369d7711.sample"
+
+[deps]
+
+source_file="res://Audio/Karen V1/Karen-15.wav"
+dest_files=["res://.godot/imported/Karen-15.wav-363ff4b348d5b82e073f3c2e369d7711.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
