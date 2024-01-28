@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtrkpvs5x36up"]
+[gd_scene load_steps=8 format=3 uid="uid://dtrkpvs5x36up"]
 
 [ext_resource type="Script" path="res://NPC_Spawner.gd" id="1_2xd5b"]
 [ext_resource type="Curve3D" uid="uid://v0rdsivqy80d" path="res://Curves/curve1.tres" id="2_y46yk"]
 
 [sub_resource type="Curve3D" id="Curve3D_0annh"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.97593, -3.91006e-05, -8.07294, 0, 0, 0, 0, 0, 0, 3.47536, -3.91006e-05, -8.03037, 0, 0, 0, 0, 0, 0, 3.57114, -3.91006e-05, -6.1786, 0, 0, 0, 0, 0, 0, 3.93299, 0.0270915, -4.19326, 0, 0, 0, 0, 0, 0, 3.46533, -0.00165717, -2.85932, 0, 0, 0, 0, 0, 0, 3.93298, -3.91006e-05, -1.60239, 0, 0, 0, 0, 0, 0, 3.02295, -0.00126812, 0.292297, 0, 0, 0, 0, 0, 0, 2.96143, -0.00287612, 1.6844, 0, 0, 0, 0, 0, 0, 1.25514, -3.91006e-05, 1.92831),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.97596, 0.0602921, -8.0098, 0, 0, 0, 0, 0, 0, 3.47536, -3.91006e-05, -8.03037, 0, 0, 0, 0, 0, 0, 0.963992, 0.0420439, -8.45688, 0, 0, 0, 0, 0, 0, -4.56897, 0.0967884, -6.96053, 0, 0, 0, 0, 0, 0, -5.18347, 0.111336, -5.41604, 0, 0, 0, 0, 0, 0, -5.56897, 0.0839636, -2.00362, 0, 0, 0, 0, 0, 0, -5.54414, 0.120498, 0.632417, 0, 0, 0, 0, 0, 0, -4.19734, 0.124613, 1.64036, 0, 0, 0, 0, 0, 0, 0.829825, 0.0840521, 1.87123),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 9
@@ -30,6 +30,13 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 11
+
+[sub_resource type="Curve3D" id="Curve3D_uyvcm"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.60349, 0.104729, 1.67109, 0, 0, 0, 0, 0, 0, 1.97537, 0.104729, 1.60784, 0, 0, 0, 0, 0, 0, 2.16678, 0.136299, -2.33328, 0, 0, 0, 0, 0, 0, 1.34976, 0.118721, -4.2576, 0, 0, 0, 0, 0, 0, 0.959137, 0.121016, -5.57144, 0, 0, 0, 0, 0, 0, -2.74643, 0.131659, -5.47566, 0, 0, 0, 0, 0, 0, -3.13217, 0.121016, -3.56003, 0, 0, 0, 0, 0, 0, -3.827, 0.111547, 0.271786, 0, 0, 0, 0, 0, 0, -3.87082, 0.108374, 1.16758, 0, 0, 0, 0, 0, 0, 0.169708, 0.110112, 1.47237),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 10
 
 [node name="NPC_Spawner" type="Node3D"]
 script = ExtResource("1_2xd5b")
@@ -71,5 +78,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17221, -0.100704, -4.01499)
 curve = SubResource("Curve3D_dtelw")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath5"]
+transform = Transform3D(0.0256312, 0, -0.999558, 0, 0.999906, 0, 0.99958, 0, 0.0256307, -7.75266, -2.14577e-05, -8.02604)
+loop = false
+
+[node name="SpawnPath6" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17221, -0.100704, -4.01499)
+curve = SubResource("Curve3D_uyvcm")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath6"]
 transform = Transform3D(0.0256312, 0, -0.999558, 0, 0.999906, 0, 0.99958, 0, 0.0256307, -7.75266, -2.14577e-05, -8.02604)
 loop = false

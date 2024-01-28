@@ -28,7 +28,6 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 script = ExtResource("1_r5yrg")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_my8c0")
 animation = &"open"
