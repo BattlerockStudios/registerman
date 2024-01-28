@@ -8,7 +8,7 @@ var timer: float = 0.1
 
 var completed: float = 1
 
-var npcPath
+var npcPath  # This is the path that we'll use to track progress
 
 
 func _set_follow_point(followPath):
