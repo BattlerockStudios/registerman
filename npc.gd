@@ -9,6 +9,18 @@ var timer: float = 0.1
 var completed: float = 1
 
 var npcPath  # This is the path that we'll use to track progress
+var randomNumber: float = 0.1
+var chillTime: float = 0.1
+
+
+func _random_number_range() -> float:
+	var min_value = 1
+	var max_value = 2
+
+	var random_float_range = randf() * (max_value - min_value) + min_value
+
+	# print(random_float_range)
+	return random_float_range
 
 
 func _set_follow_point(followPath):
@@ -20,6 +32,8 @@ func _ready():
 	timer = startTime
 	currPosition = global_position
 	prevPosition = global_position
+	randomNumber = _random_number_range()
+	chillTime = randomNumber
 	pass  # Replace with function body.
 
 
@@ -28,11 +42,16 @@ func _process(delta):
 	currPosition = global_position
 
 	timer -= delta
-
-	if npcPath.progress_ratio < completed:
-		npcPath.progress_ratio += delta * .05
+	if randomNumber > 0:
+		randomNumber -= delta
 	else:
-		npcPath.progress_ratio = 1
+		chillTime -= delta
+		if chillTime < 0:
+			randomNumber = _random_number_range()
+			chillTime = randomNumber
+		else:
+			if npcPath.progress_ratio < completed:
+				npcPath.progress_ratio += delta * .05
 
 	if timer <= 0:
 		if currPosition != prevPosition:
@@ -54,6 +73,7 @@ func _process(delta):
 
 			prevPosition = currPosition
 			timer = startTime
+
 		else:
 			$AnimatedSprite3D.animation = "idle"
 	pass
