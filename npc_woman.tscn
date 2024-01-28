@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://bsnq802w1oysh"]
+[gd_scene load_steps=20 format=3 uid="uid://bsnq802w1oysh"]
 
 [ext_resource type="Texture2D" uid="uid://dlv2rxa5tb7hj" path="res://Characters/woman_v1.png" id="1_j7w8t"]
+[ext_resource type="Script" path="res://npc.gd" id="1_nrui4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d3id5"]
 atlas = ExtResource("1_j7w8t")
@@ -137,12 +138,13 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="NPC" type="Node3D"]
+[node name="NPC" type="Node3D" groups=["npc"]]
+script = ExtResource("1_nrui4")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 pixel_size = 0.015
 billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_dealf")
-animation = &"idle"
+animation = &"walk_sideways"
 autoplay = "idle"

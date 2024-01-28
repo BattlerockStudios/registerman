@@ -1,15 +1,14 @@
 extends Node
 
-var cowboy = preload("res://npc_cowboy.tscn")
-var woman = preload("res://npc_woman.tscn")
-
 @onready var spawnLocations = [$SpawnPath1/SpawnLocation, $SpawnPath2/SpawnLocation]
+@onready var cowboy = preload("res://npc_cowboy.tscn")
+@onready var woman = preload("res://npc_woman.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_on_spawn_npc(0, cowboy)
-	# _on_spawn_npc(1, woman)
+	_on_spawn_npc(1, woman)
 	pass
 
 
@@ -25,12 +24,6 @@ func _on_spawn_npc(index: int, resource: Resource) -> void:
 
 	# And give it a random offset.
 	npc_spawn_location.progress_ratio = 0
-
-	# var npcScript = npc.get_script()
-	# print(npcScript.pathFollowMarker)
-
-	# if npcScript:
-	# 	npcScript.pathFollowMarker = npc_spawn_location
 
 	# Spawn the npc by adding it to the Main scene.
 	npc_spawn_location.add_child(npc)

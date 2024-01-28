@@ -124,7 +124,7 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="NPC" type="Node3D"]
+[node name="NPC" type="Node3D" groups=["npc"]]
 script = ExtResource("1_88o6p")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
@@ -132,5 +132,5 @@ pixel_size = 0.015
 billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_dealf")
-animation = &"idle"
+animation = &"walk_sideways"
 autoplay = "idle"

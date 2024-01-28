@@ -1,16 +1,47 @@
 extends Node3D
 
-@onready var spawner = $NPC_Spawner
+var prevPosition: Vector3
+var currPosition: Vector3
+
+var startTime: float = 0.1
+var timer: float = 0.1
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(spawner)
+	timer = startTime
+	currPosition = global_position
+	prevPosition = global_position
 	pass  # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	# if pathFollowMarker:
-	# 	pathFollowMarker.progress_ratio += delta * 100
+	# var directionToTarget = (m_target.transform.position - transform.position).normalized;
+	currPosition = global_position
+
+	timer -= delta
+
+	if timer <= 0:
+		if currPosition != prevPosition:
+			var direction = currPosition - prevPosition
+			var absDir = abs(direction)
+
+			if direction.x > 0 && absDir.x > absDir.z:
+				$AnimatedSprite3D.animation = "walk_sideways"
+				$AnimatedSprite3D.flip_h = false
+			elif direction.x < 0 && absDir.x > absDir.z:
+				$AnimatedSprite3D.animation = "walk_sideways"
+				$AnimatedSprite3D.flip_h = true
+			elif direction.z > 0 && absDir.z > absDir.x:
+				$AnimatedSprite3D.animation = "walk_forward"
+			elif direction.z < 0 && absDir.z > absDir.x:
+				$AnimatedSprite3D.animation = "walk_away"
+			else:
+				$AnimatedSprite3D.animation = "idle"
+
+			prevPosition = currPosition
+			timer = startTime
+		else:
+			$AnimatedSprite3D.animation = "idle"
 	pass
