@@ -80,4 +80,4 @@ spot_range = 10.0
 spot_angle = 60.0
 
 [node name="Player" parent="." instance=ExtResource("4_suk2n")]
-transform = Transform3D(0.01, 0, 0, 0, 0.005, 0.00866025, 0, -0.00866025, 0.005, 0, 1.21729, 0.264241)
+transform = Transform3D(0.015, 0, 0, 0, -6.55671e-10, 0.015, 0, -0.015, -6.55671e-10, 0, 1.21729, 0.264241)
