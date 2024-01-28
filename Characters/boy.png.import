@@ -2,28 +2,29 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2mcj0qockx6d"
-path="res://.godot/imported/Cowboy_v1.png-7a1262e35cf45629bc179dd083759073.ctex"
+uid="uid://ckk7g3wjor6vn"
+path.s3tc="res://.godot/imported/boy.png-6dbb85b517d3cc75b0e5a58d0ad36d4b.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://Characters/Cowboy_v1.png"
-dest_files=["res://.godot/imported/Cowboy_v1.png-7a1262e35cf45629bc179dd083759073.ctex"]
+source_file="res://Characters/boy.png"
+dest_files=["res://.godot/imported/boy.png-6dbb85b517d3cc75b0e5a58d0ad36d4b.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=2
+compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
+roughness/mode=0
 roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
