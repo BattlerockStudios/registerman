@@ -12,6 +12,10 @@ var npcPath  # This is the path that we'll use to track progress
 var randomNumber: float = 0.1
 var chillTime: float = 0.1
 
+@export var npc_name: String
+@export var audio: Array[AudioStream]
+
+var curr_audio = 0
 
 func _random_number_range() -> float:
 	var min_value = 1
@@ -77,3 +81,18 @@ func _process(delta):
 		else:
 			$AnimatedSprite3D.animation = "idle"
 	pass
+
+func _on_audio_timer_timeout():
+	
+	$AudioStreamPlayer3D.stop()
+	$AudioStreamPlayer3D.stream = audio[curr_audio]
+	$AudioStreamPlayer3D.play()
+	
+	var rng = RandomNumberGenerator.new()
+	
+	if curr_audio < len(audio)-1:
+		curr_audio += 1
+	else:
+		curr_audio = 0
+	$AudioTimer.set_wait_time(rng.randf_range(6.0, 20.0))
+	pass # Replace with function body.

@@ -1,7 +1,17 @@
-[gd_scene load_steps=20 format=3 uid="uid://bsnq802w1oysh"]
+[gd_scene load_steps=30 format=3 uid="uid://bsnq802w1oysh"]
 
 [ext_resource type="Texture2D" uid="uid://dlv2rxa5tb7hj" path="res://Characters/woman_v1.png" id="1_j7w8t"]
 [ext_resource type="Script" path="res://npc.gd" id="1_nrui4"]
+[ext_resource type="AudioStream" uid="uid://da4xgh8jxmwtb" path="res://Audio/BasicV1/Basic-01.wav" id="2_0dcwa"]
+[ext_resource type="AudioStream" uid="uid://bsaaor6h4wg6u" path="res://Audio/BasicV1/Basic-02.wav" id="3_lt05l"]
+[ext_resource type="AudioStream" uid="uid://73jxv6lixe5f" path="res://Audio/BasicV1/Basic-03.wav" id="4_d45cc"]
+[ext_resource type="AudioStream" uid="uid://bx3j02grd17qu" path="res://Audio/BasicV1/Basic-04.wav" id="5_q7epx"]
+[ext_resource type="AudioStream" uid="uid://b02gfutbpkj60" path="res://Audio/BasicV1/Basic-05.wav" id="6_yhgfr"]
+[ext_resource type="AudioStream" uid="uid://b14oick70t3ck" path="res://Audio/BasicV1/Basic-06.wav" id="7_qeeww"]
+[ext_resource type="AudioStream" uid="uid://bh7vyvh22pf8b" path="res://Audio/BasicV1/Basic-07.wav" id="8_nh5g8"]
+[ext_resource type="AudioStream" uid="uid://d08fcgvgyygvr" path="res://Audio/BasicV1/Basic-08.wav" id="9_8reqb"]
+[ext_resource type="AudioStream" uid="uid://drdhr008e1kju" path="res://Audio/BasicV1/Basic-09.wav" id="10_28ew0"]
+[ext_resource type="AudioStream" uid="uid://cn0q6k0rwsk84" path="res://Audio/BasicV1/Basic-10.wav" id="11_d7d1n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d3id5"]
 atlas = ExtResource("1_j7w8t")
@@ -140,6 +150,8 @@ animations = [{
 
 [node name="NPC" type="Node3D" groups=["npc"]]
 script = ExtResource("1_nrui4")
+npc_name = "woman"
+audio = Array[AudioStream]([ExtResource("2_0dcwa"), ExtResource("3_lt05l"), ExtResource("4_d45cc"), ExtResource("5_q7epx"), ExtResource("6_yhgfr"), ExtResource("7_qeeww"), ExtResource("8_nh5g8"), ExtResource("9_8reqb"), ExtResource("10_28ew0"), ExtResource("11_d7d1n")])
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 pixel_size = 0.015
@@ -148,3 +160,11 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_dealf")
 animation = &"walk_forward"
 autoplay = "idle"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AudioTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="AudioTimer" to="." method="_on_audio_timer_timeout"]

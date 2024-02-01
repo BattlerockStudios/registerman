@@ -1,7 +1,18 @@
-[gd_scene load_steps=20 format=3 uid="uid://87c5w4jf0mlh"]
+[gd_scene load_steps=31 format=3 uid="uid://87c5w4jf0mlh"]
 
 [ext_resource type="Texture2D" uid="uid://ckk7g3wjor6vn" path="res://Characters/boy.png" id="1_b8guu"]
 [ext_resource type="Script" path="res://npc.gd" id="1_wmo0f"]
+[ext_resource type="AudioStream" uid="uid://durndfc8bekvk" path="res://Audio/Boy v1/Boy-01.wav" id="2_bgxg2"]
+[ext_resource type="AudioStream" uid="uid://bieu2qmy5iwql" path="res://Audio/Boy v1/Boy-02.wav" id="3_ok0ys"]
+[ext_resource type="AudioStream" uid="uid://ckgu46txlkfp4" path="res://Audio/Boy v1/Boy-03.wav" id="4_xfhmc"]
+[ext_resource type="AudioStream" uid="uid://c2ggwxgkhd1rq" path="res://Audio/Boy v1/Boy-04.wav" id="5_chkkw"]
+[ext_resource type="AudioStream" uid="uid://crh11qcdvg423" path="res://Audio/Boy v1/Boy-05.wav" id="6_qjhuf"]
+[ext_resource type="AudioStream" uid="uid://dba7ccpvw5fio" path="res://Audio/Boy v1/Boy-06.wav" id="7_tde80"]
+[ext_resource type="AudioStream" uid="uid://dpobgxqxqv0ce" path="res://Audio/Boy v1/Boy-07.wav" id="8_24to8"]
+[ext_resource type="AudioStream" uid="uid://ce6mmyhy4wrvs" path="res://Audio/Boy v1/Boy-08.wav" id="9_5xju8"]
+[ext_resource type="AudioStream" uid="uid://dk2n3oxgvme60" path="res://Audio/Boy v1/Boy-09.wav" id="10_b8ebr"]
+[ext_resource type="AudioStream" uid="uid://cnk6larwbo8wq" path="res://Audio/Boy v1/Boy-10.wav" id="11_bv7ad"]
+[ext_resource type="AudioStream" uid="uid://cll4eaq11n00o" path="res://Audio/Boy v1/Boy-11.wav" id="12_uxqvc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ggnl"]
 atlas = ExtResource("1_b8guu")
@@ -140,6 +151,8 @@ animations = [{
 
 [node name="NPC" type="Node3D"]
 script = ExtResource("1_wmo0f")
+npc_name = "boy"
+audio = Array[AudioStream]([ExtResource("2_bgxg2"), ExtResource("3_ok0ys"), ExtResource("4_xfhmc"), ExtResource("5_chkkw"), ExtResource("6_qjhuf"), ExtResource("7_tde80"), ExtResource("8_24to8"), ExtResource("9_5xju8"), ExtResource("10_b8ebr"), ExtResource("11_bv7ad"), ExtResource("12_uxqvc")])
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." groups=["npc"]]
 pixel_size = 0.015
@@ -148,3 +161,11 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_dealf")
 animation = &"walk_sideways"
 autoplay = "idle"
+
+[node name="AudioTimer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[connection signal="timeout" from="AudioTimer" to="." method="_on_audio_timer_timeout"]

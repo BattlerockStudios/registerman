@@ -1,7 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://dkd5ivpu68rty"]
+[gd_scene load_steps=26 format=3 uid="uid://dkd5ivpu68rty"]
 
 [ext_resource type="Script" path="res://npc.gd" id="1_88o6p"]
 [ext_resource type="Texture2D" uid="uid://c2mcj0qockx6d" path="res://Characters/Cowboy_v1.png" id="1_bdh35"]
+[ext_resource type="AudioStream" uid="uid://28frypwsji6r" path="res://Audio/Cowboy V1/Cowboy-01.wav" id="2_ferug"]
+[ext_resource type="AudioStream" uid="uid://c2q2t0f1a7p8v" path="res://Audio/Cowboy V1/Cowboy-02.wav" id="3_kvnp4"]
+[ext_resource type="AudioStream" uid="uid://desr480ui7q5e" path="res://Audio/Cowboy V1/Cowboy-03.wav" id="4_dg6sq"]
+[ext_resource type="AudioStream" uid="uid://bw74n3f622km3" path="res://Audio/Cowboy V1/Cowboy-04.wav" id="5_q7t2x"]
+[ext_resource type="AudioStream" uid="uid://c4bwknbjt4030" path="res://Audio/Cowboy V1/Cowboy-05.wav" id="6_5cd3f"]
+[ext_resource type="AudioStream" uid="uid://ci1obhihwipg6" path="res://Audio/Cowboy V1/Cowboy-06.wav" id="7_do6mv"]
+[ext_resource type="AudioStream" uid="uid://cahxr0a4jlw5p" path="res://Audio/Cowboy V1/Cowboy-07.wav" id="8_fql8x"]
+[ext_resource type="AudioStream" uid="uid://biiv18r8g2bne" path="res://Audio/Cowboy V1/Cowboy-08.wav" id="9_bw7hq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8d8h"]
 atlas = ExtResource("1_bdh35")
@@ -126,6 +134,8 @@ animations = [{
 
 [node name="NPC" type="Node3D" groups=["npc"]]
 script = ExtResource("1_88o6p")
+npc_name = "cowboy"
+audio = Array[AudioStream]([ExtResource("2_ferug"), ExtResource("3_kvnp4"), ExtResource("4_dg6sq"), ExtResource("5_q7t2x"), ExtResource("6_5cd3f"), ExtResource("7_do6mv"), ExtResource("8_fql8x"), ExtResource("9_bw7hq")])
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 pixel_size = 0.015
@@ -134,3 +144,11 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_dealf")
 animation = &"walk_sideways"
 autoplay = "idle"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AudioTimer" type="Timer" parent="."]
+wait_time = 7.0
+autostart = true
+
+[connection signal="timeout" from="AudioTimer" to="." method="_on_audio_timer_timeout"]

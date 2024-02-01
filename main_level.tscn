@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwpyuphn6c37q"]
+[gd_scene load_steps=7 format=3 uid="uid://bwpyuphn6c37q"]
 
 [ext_resource type="Script" path="res://main_level.gd" id="1_3shja"]
 [ext_resource type="PackedScene" uid="uid://dtrkpvs5x36up" path="res://npc_spawner.tscn" id="2_6otht"]
 [ext_resource type="PackedScene" uid="uid://ceh2rhlwcjm0j" path="res://Level/Main_Scene.glb" id="3_hs4ck"]
 [ext_resource type="PackedScene" uid="uid://cr7mer5u56ern" path="res://player.tscn" id="4_suk2n"]
+[ext_resource type="AudioStream" uid="uid://c8cvi7im4uhgr" path="res://Audio/RegisterMan.wav" id="5_qc8ef"]
 
 [sub_resource type="Environment" id="Environment_64k7t"]
 
@@ -82,3 +83,9 @@ spot_angle = 60.0
 
 [node name="Player" parent="." instance=ExtResource("4_suk2n")]
 transform = Transform3D(0.015, 0, 0, 0, -6.55671e-10, 0.015, 0, -0.015, -6.55671e-10, 0, 1.21729, 0.264241)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qc8ef")
+volume_db = -8.0
+pitch_scale = 0.75
+autoplay = true

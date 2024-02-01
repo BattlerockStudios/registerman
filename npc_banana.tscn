@@ -1,7 +1,18 @@
-[gd_scene load_steps=20 format=3 uid="uid://snqlvyynx7ny"]
+[gd_scene load_steps=31 format=3 uid="uid://snqlvyynx7ny"]
 
 [ext_resource type="Script" path="res://npc.gd" id="1_4adis"]
+[ext_resource type="AudioStream" uid="uid://cs8cdk8tbtolq" path="res://Audio/BananaMan V2/BananaMan-01.wav" id="2_pga6b"]
 [ext_resource type="Texture2D" uid="uid://k2tdwxkc66rh" path="res://Characters/BananaMan.png" id="2_whfeq"]
+[ext_resource type="AudioStream" uid="uid://cy734xerdr72w" path="res://Audio/BananaMan V2/BananaMan-02.wav" id="3_axt0u"]
+[ext_resource type="AudioStream" uid="uid://d0isle1cw7k8d" path="res://Audio/BananaMan V2/BananaMan-03.wav" id="4_q2ol4"]
+[ext_resource type="AudioStream" uid="uid://dyih5rwe23s6l" path="res://Audio/BananaMan V2/BananaMan-04.wav" id="5_rt37i"]
+[ext_resource type="AudioStream" uid="uid://cwq4ounlsgvag" path="res://Audio/BananaMan V2/BananaMan-05.wav" id="6_5yyu0"]
+[ext_resource type="AudioStream" uid="uid://cj4yyxa8cxqol" path="res://Audio/BananaMan V2/BananaMan-06.wav" id="7_64tnk"]
+[ext_resource type="AudioStream" uid="uid://cl83pk4kpddc" path="res://Audio/BananaMan V2/BananaMan-07.wav" id="8_djovj"]
+[ext_resource type="AudioStream" uid="uid://cpl1asbynctc1" path="res://Audio/BananaMan V2/BananaMan-08.wav" id="9_20k60"]
+[ext_resource type="AudioStream" uid="uid://cn4pu8xhgxrfe" path="res://Audio/BananaMan V2/BananaMan-09.wav" id="10_v3jv4"]
+[ext_resource type="AudioStream" uid="uid://c4ta8tvrrigpd" path="res://Audio/BananaMan V2/BananaMan-10.wav" id="11_h1juw"]
+[ext_resource type="AudioStream" uid="uid://dc22wsf7apf0o" path="res://Audio/BananaMan V2/BananaMan-11.wav" id="12_7tp2t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jpfsk"]
 atlas = ExtResource("2_whfeq")
@@ -140,6 +151,8 @@ animations = [{
 
 [node name="NPC" type="Node3D" groups=["npc"]]
 script = ExtResource("1_4adis")
+npc_name = "banana"
+audio = Array[AudioStream]([ExtResource("2_pga6b"), ExtResource("3_axt0u"), ExtResource("4_q2ol4"), ExtResource("5_rt37i"), ExtResource("6_5yyu0"), ExtResource("7_64tnk"), ExtResource("8_djovj"), ExtResource("9_20k60"), ExtResource("10_v3jv4"), ExtResource("11_h1juw"), ExtResource("12_7tp2t")])
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 pixel_size = 0.015
@@ -148,3 +161,11 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_dealf")
 animation = &"walk_sideways"
 autoplay = "idle"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AudioTimer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[connection signal="timeout" from="AudioTimer" to="." method="_on_audio_timer_timeout"]
