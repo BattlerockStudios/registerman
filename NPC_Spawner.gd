@@ -28,6 +28,11 @@ extends Node
 @onready var val = 0
 
 
+func _ready():
+	_on_spawn_timer_timeout()
+	pass
+
+
 func _on_spawn_npc(index: int, resource: Resource) -> void:
 	print("Spawn NPC")
 
