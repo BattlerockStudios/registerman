@@ -1,12 +1,12 @@
 extends Node
 
-@onready var spawnLocations = [
-	$SpawnPath1/SpawnLocation,
-	$SpawnPath2/SpawnLocation,
-	$SpawnPath3/SpawnLocation,
-	$SpawnPath4/SpawnLocation,
-	$SpawnPath5/SpawnLocation,
-	$SpawnPath6/SpawnLocation
+@onready var spawnPoints = [
+	{"location": $SpawnPath1/SpawnLocation, "occupied": false},
+	{"location": $SpawnPath2/SpawnLocation, "occupied": false},
+	{"location": $SpawnPath3/SpawnLocation, "occupied": false},
+	{"location": $SpawnPath4/SpawnLocation, "occupied": false},
+	{"location": $SpawnPath5/SpawnLocation, "occupied": false},
+	{"location": $SpawnPath6/SpawnLocation, "occupied": false}
 ]
 
 @onready var cowboy = preload("res://npc_cowboy.tscn")
@@ -16,16 +16,16 @@ extends Node
 @onready var banana = preload("res://npc_banana.tscn")
 @onready var karen = preload("res://npc_karen.tscn")
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	_on_spawn_npc(0, cowboy)
-	_on_spawn_npc(1, woman)
-	_on_spawn_npc(2, boy)
-	_on_spawn_npc(3, dough)
-	_on_spawn_npc(4, banana)
-	_on_spawn_npc(5, karen)
-	pass
+@onready var npc_array = [
+	{"npc": cowboy, "enabled": false},
+	{"npc": woman, "enabled": false},
+	{"npc": boy, "enabled": false},
+	{"npc": dough, "enabled": false},
+	{"npc": banana, "enabled": false},
+	{"npc": karen, "enabled": false}
+]
+@onready var timer = $SpawnTimer
+@onready var val = 0
 
 
 func _on_spawn_npc(index: int, resource: Resource) -> void:
@@ -36,12 +36,33 @@ func _on_spawn_npc(index: int, resource: Resource) -> void:
 
 	# Choose a random location on the SpawnPath.
 	# We store the reference to the SpawnLocation node.
-	var npc_spawn_location = spawnLocations[index]
+	var spawnPoint = spawnPoints[index]
 
 	# And give it a random offset.
-	npc_spawn_location.progress_ratio = 0
+	spawnPoint.location.progress_ratio = 0
 
-	npc._set_follow_point(npc_spawn_location)
+	npc._set_follow_point(spawnPoint.location)
 
 	# Spawn the npc by adding it to the Main scene.
-	npc_spawn_location.add_child(npc)
+	spawnPoint.location.add_child(npc)
+	val += 1
+	pass
+
+
+func _on_spawn_timer_timeout():
+	var filtered_npc_array = npc_array.filter(remove_disabled)
+	if !filtered_npc_array:
+		return
+	var random_range = randi() % filtered_npc_array.size()
+	var available_npcs = filtered_npc_array[random_range]
+
+	var npc = available_npcs.npc
+	if val >= npc_array.size():
+		val = 0
+	_on_spawn_npc(val, npc)
+	available_npcs.enabled = true
+	pass  # Replace with function body.
+
+
+func remove_disabled(item):
+	return !item["enabled"]

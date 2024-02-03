@@ -1,5 +1,9 @@
 extends Node3D
 
+# Track if the NPC completed their path
+#	If path completed AND NPC has an item then place it on the counter
+# Along the path, check to see if an NPC is near a shelf to grab an item
+
 var prevPosition: Vector3
 var currPosition: Vector3
 
@@ -8,14 +12,15 @@ var timer: float = 0.1
 
 var completed: float = 1
 
-var npcPath  # This is the path that we'll use to track progress
-var randomNumber: float = 0.1
-var chillTime: float = 0.1
+var path  # This is the path that we'll use to track progress
+var wanderTime: float = 0.1  # NPC's can wander for this time
+var chillTime: float = 0.1  # How long an NPC should stop and stare
 
 @export var npc_name: String
 @export var audio: Array[AudioStream]
 
 var curr_audio = 0
+
 
 func _random_number_range() -> float:
 	var min_value = 1
@@ -28,7 +33,7 @@ func _random_number_range() -> float:
 
 
 func _set_follow_point(followPath):
-	npcPath = followPath
+	path = followPath
 
 
 # Called when the node enters the scene tree for the first time.
@@ -36,8 +41,8 @@ func _ready():
 	timer = startTime
 	currPosition = global_position
 	prevPosition = global_position
-	randomNumber = _random_number_range()
-	chillTime = randomNumber
+	wanderTime = _random_number_range()
+	chillTime = wanderTime
 	pass  # Replace with function body.
 
 
@@ -46,16 +51,16 @@ func _process(delta):
 	currPosition = global_position
 
 	timer -= delta
-	if randomNumber > 0:
-		randomNumber -= delta
+	if wanderTime > 0:
+		wanderTime -= delta
 	else:
 		chillTime -= delta
 		if chillTime < 0:
-			randomNumber = _random_number_range()
-			chillTime = randomNumber
+			wanderTime = _random_number_range()
+			chillTime = wanderTime
 		else:
-			if npcPath.progress_ratio < completed:
-				npcPath.progress_ratio += delta * .05
+			if path.progress_ratio < completed:
+				path.progress_ratio += delta * .05
 
 	if timer <= 0:
 		if currPosition != prevPosition:
@@ -82,17 +87,17 @@ func _process(delta):
 			$AnimatedSprite3D.animation = "idle"
 	pass
 
+
 func _on_audio_timer_timeout():
-	
 	$AudioStreamPlayer3D.stop()
 	$AudioStreamPlayer3D.stream = audio[curr_audio]
 	$AudioStreamPlayer3D.play()
-	
+
 	var rng = RandomNumberGenerator.new()
-	
-	if curr_audio < len(audio)-1:
+
+	if curr_audio < len(audio) - 1:
 		curr_audio += 1
 	else:
 		curr_audio = 0
 	$AudioTimer.set_wait_time(rng.randf_range(6.0, 20.0))
-	pass # Replace with function body.
+	pass  # Replace with function body.

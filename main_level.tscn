@@ -17,7 +17,6 @@ environment = SubResource("Environment_64k7t")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.5, 0.6)
 current = true
-fov = 97.8
 size = 5.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
