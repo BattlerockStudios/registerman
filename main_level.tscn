@@ -98,3 +98,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -5)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ItemPickupTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.98027, -0.148743, -2)
 shape = SubResource("BoxShape3D_73ybl")
+
+[connection signal="body_entered" from="ItemPickupTrigger" to="." method="_on_item_pickup_trigger_body_entered"]

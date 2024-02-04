@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bsnq802w1oysh"]
+[gd_scene load_steps=31 format=3 uid="uid://bsnq802w1oysh"]
 
 [ext_resource type="Texture2D" uid="uid://dlv2rxa5tb7hj" path="res://Characters/woman_v1.png" id="1_j7w8t"]
 [ext_resource type="Script" path="res://npc.gd" id="1_nrui4"]
@@ -148,7 +148,9 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="NPC" type="Node3D" groups=["npc"]]
+[sub_resource type="BoxShape3D" id="BoxShape3D_6xihl"]
+
+[node name="NPC" type="CharacterBody3D" groups=["npc"]]
 script = ExtResource("1_nrui4")
 npc_name = "woman"
 audio = Array[AudioStream]([ExtResource("2_0dcwa"), ExtResource("3_lt05l"), ExtResource("4_d45cc"), ExtResource("5_q7epx"), ExtResource("6_yhgfr"), ExtResource("7_qeeww"), ExtResource("8_nh5g8"), ExtResource("9_8reqb"), ExtResource("10_28ew0"), ExtResource("11_d7d1n")])
@@ -166,5 +168,8 @@ autoplay = "idle"
 [node name="AudioTimer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_6xihl")
 
 [connection signal="timeout" from="AudioTimer" to="." method="_on_audio_timer_timeout"]

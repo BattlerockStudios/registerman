@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://tgtubojwcjej"]
+[gd_scene load_steps=36 format=3 uid="uid://tgtubojwcjej"]
 
 [ext_resource type="Script" path="res://npc.gd" id="1_7eeh4"]
 [ext_resource type="Texture2D" uid="uid://bpkkhbiyt34ot" path="res://Characters/Karen_v2.png" id="2_7ejtw"]
@@ -153,7 +153,9 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="NPC" type="Node3D" groups=["npc"]]
+[sub_resource type="BoxShape3D" id="BoxShape3D_1c5l4"]
+
+[node name="NPC" type="CharacterBody3D" groups=["npc"]]
 script = ExtResource("1_7eeh4")
 npc_name = "karen"
 audio = Array[AudioStream]([ExtResource("2_o2wi2"), ExtResource("3_lnaof"), ExtResource("4_bb758"), ExtResource("5_oienv"), ExtResource("6_04sgg"), ExtResource("7_mmynn"), ExtResource("8_n0i05"), ExtResource("9_e5rmx"), ExtResource("10_mr1p2"), ExtResource("11_s8dc7"), ExtResource("12_5wtp7"), ExtResource("13_hp5pa"), ExtResource("14_w0w1s"), ExtResource("15_xkj1r"), ExtResource("16_iu6v6")])
@@ -171,5 +173,8 @@ autoplay = "idle"
 [node name="AudioTimer" type="Timer" parent="."]
 wait_time = 4.0
 autostart = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_1c5l4")
 
 [connection signal="timeout" from="AudioTimer" to="." method="_on_audio_timer_timeout"]

@@ -21,9 +21,10 @@ var chillTime: float = 0.1  # How long an NPC should stop and stare
 @export var npc_name: String
 @export var audio: Array[AudioStream]
 
-var curr_audio = 0
+@onready var item = preload("res://item.tscn")
+@onready var doritos = preload("res://Snacks/Doritos.png")
 
-signal pickup_item
+var curr_audio = 0
 
 
 func _random_number_range() -> float:
@@ -91,7 +92,6 @@ func _process(delta):
 
 
 func _on_audio_timer_timeout():
-	print("test")
 	$AudioStreamPlayer3D.stop()
 	$AudioStreamPlayer3D.stream = audio[curr_audio]
 	$AudioStreamPlayer3D.play()
@@ -105,6 +105,14 @@ func _on_audio_timer_timeout():
 	$AudioTimer.set_wait_time(rng.randf_range(6.0, 20.0))
 
 
-func _on_body_entered(body: Node3D):
-	pickup_item.emit()
-	print(body)
+func _on_pickup_item():
+	var itm = item.instantiate()
+	print(itm)
+	# itm.sprite3D.texture = doritos
+	# print(itm)
+	# held_item = itm
+
+
+func _on_area_entered(area: Area3D):
+	_on_pickup_item()
+	print(area)

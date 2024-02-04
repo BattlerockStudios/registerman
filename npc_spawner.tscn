@@ -62,7 +62,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17221, -4.56603, -4.01499)
 curve = SubResource("Curve3D_wxf4e")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath3"]
-transform = Transform3D(0.0260181, -0.00720098, -0.999539, -2.3282e-10, 0.999868, -0.00720349, 0.999615, 0.000187429, 0.0260162, -7.70702, 4.55051, 2.17354)
+transform = Transform3D(0.0260181, -0.00720098, -0.999539, -2.3282e-10, 0.999868, -0.00720349, 0.999615, 0.000187429, 0.0260161, -7.70702, 4.55051, 2.17354)
 loop = false
 
 [node name="SpawnPath4" type="Path3D" parent="."]

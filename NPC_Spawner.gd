@@ -29,10 +29,7 @@ extends Node
 
 
 func _ready():
-	# _on_spawn_timer_timeout()
-	_on_spawn_npc(0, banana)
-	_on_spawn_npc(1, banana)
-	_on_spawn_npc(2, banana)
+	_on_spawn_timer_timeout()
 
 
 func _on_spawn_npc(index: int, resource: Resource) -> void:
@@ -56,7 +53,17 @@ func _on_spawn_npc(index: int, resource: Resource) -> void:
 
 
 func _on_spawn_timer_timeout():
-	pass
+	var filtered_npc_array = npc_array.filter(remove_disabled)
+	if !filtered_npc_array:
+		return
+	var random_range = randi() % filtered_npc_array.size()
+	var available_npcs = filtered_npc_array[random_range]
+
+	var npc = available_npcs.npc
+	if val >= npc_array.size():
+		val = 0
+	_on_spawn_npc(val, npc)
+	available_npcs.enabled = true
 
 
 func remove_disabled(item):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dkd5ivpu68rty"]
+[gd_scene load_steps=27 format=3 uid="uid://dkd5ivpu68rty"]
 
 [ext_resource type="Script" path="res://npc.gd" id="1_88o6p"]
 [ext_resource type="Texture2D" uid="uid://c2mcj0qockx6d" path="res://Characters/Cowboy_v1.png" id="1_bdh35"]
@@ -132,7 +132,9 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="NPC" type="Node3D" groups=["npc"]]
+[sub_resource type="BoxShape3D" id="BoxShape3D_5iegp"]
+
+[node name="NPC" type="CharacterBody3D" groups=["npc"]]
 script = ExtResource("1_88o6p")
 npc_name = "cowboy"
 audio = Array[AudioStream]([ExtResource("2_ferug"), ExtResource("3_kvnp4"), ExtResource("4_dg6sq"), ExtResource("5_q7t2x"), ExtResource("6_5cd3f"), ExtResource("7_do6mv"), ExtResource("8_fql8x"), ExtResource("9_bw7hq")])
@@ -150,5 +152,8 @@ autoplay = "idle"
 [node name="AudioTimer" type="Timer" parent="."]
 wait_time = 7.0
 autostart = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_5iegp")
 
 [connection signal="timeout" from="AudioTimer" to="." method="_on_audio_timer_timeout"]

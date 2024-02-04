@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://5yqcqy6xbubs"]
+[gd_scene load_steps=37 format=3 uid="uid://5yqcqy6xbubs"]
 
 [ext_resource type="Script" path="res://npc.gd" id="1_xaons"]
 [ext_resource type="Texture2D" uid="uid://bhlkf5oib1gge" path="res://Characters/DoughMan_v1.png" id="2_1opmc"]
@@ -154,7 +154,9 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="NPC" type="Node3D" groups=["npc"]]
+[sub_resource type="BoxShape3D" id="BoxShape3D_a4aqr"]
+
+[node name="NPC" type="CharacterBody3D" groups=["npc"]]
 script = ExtResource("1_xaons")
 npc_name = "dough"
 audio = Array[AudioStream]([ExtResource("2_kdyev"), ExtResource("3_2digj"), ExtResource("4_8kh5s"), ExtResource("5_1u3qb"), ExtResource("6_jbn3o"), ExtResource("7_muq3d"), ExtResource("8_msjwt"), ExtResource("9_lpsqw"), ExtResource("10_ue41c"), ExtResource("11_gkfi8"), ExtResource("12_krr27"), ExtResource("13_ru4k6"), ExtResource("14_3b1tv"), ExtResource("15_xbi5f"), ExtResource("16_ak125"), ExtResource("17_vwpfq")])
@@ -172,5 +174,8 @@ frame_progress = 0.0974795
 autostart = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_a4aqr")
 
 [connection signal="timeout" from="AudioTimer" to="." method="_on_audio_timer_timeout"]
