@@ -23,14 +23,17 @@ var chillTime: float = 0.1  # How long an NPC should stop and stare
 
 @onready var item = preload("res://item.tscn")
 @onready var doritos = preload("res://Snacks/Doritos.png")
+@onready var gum = preload("res://Snacks/Gum.png")
+@onready var lays = preload("res://Snacks/Lays.png")
+@onready var paper = preload("res://Snacks/Paper.png")
+@onready var tea = preload("res://Snacks/Tea.png")
+
+@onready var item_array = [doritos, gum, lays, paper, tea]
 
 var curr_audio = 0
 
 
-func _random_number_range() -> float:
-	var min_value = 1
-	var max_value = 2
-
+func _random_number_range(min_value, max_value) -> float:
 	var random_float_range = randf() * (max_value - min_value) + min_value
 
 	# print(random_float_range)
@@ -46,7 +49,7 @@ func _ready():
 	timer = startTime
 	currPosition = global_position
 	prevPosition = global_position
-	wanderTime = _random_number_range()
+	wanderTime = _random_number_range(1, 2)
 	chillTime = wanderTime
 
 
@@ -60,7 +63,7 @@ func _process(delta):
 	else:
 		chillTime -= delta
 		if chillTime < 0:
-			wanderTime = _random_number_range()
+			wanderTime = _random_number_range(1, 2)
 			chillTime = wanderTime
 		else:
 			if path.progress_ratio < completed:
@@ -109,6 +112,7 @@ func _on_pickup_item():
 	if held_item:
 		return
 	var itm = item.instantiate()
-	itm.get_node("Sprite3D").texture = doritos
+	var randIndex = _random_number_range(0, len(item_array))
+	itm.get_node("Sprite3D").texture = item_array[randIndex]
 	held_item = itm
 	print(held_item)
