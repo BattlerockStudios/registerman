@@ -1,4 +1,4 @@
-extends Node3D
+extends CharacterBody3D
 
 # Track if the NPC completed their path
 #	If path completed AND NPC has an item then place it on the counter
@@ -16,7 +16,7 @@ var path  # This is the path that we'll use to track progress
 var wanderTime: float = 0.1  # NPC's can wander for this time
 var chillTime: float = 0.1  # How long an NPC should stop and stare
 
-@export var held_item: Resource
+@export var held_item: Node3D
 
 @export var npc_name: String
 @export var audio: Array[AudioStream]
@@ -106,13 +106,9 @@ func _on_audio_timer_timeout():
 
 
 func _on_pickup_item():
+	if held_item:
+		return
 	var itm = item.instantiate()
-	print(itm)
-	# itm.sprite3D.texture = doritos
-	# print(itm)
-	# held_item = itm
-
-
-func _on_area_entered(area: Area3D):
-	_on_pickup_item()
-	print(area)
+	itm.get_node("Sprite3D").texture = doritos
+	held_item = itm
+	print(held_item)
