@@ -62,7 +62,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17221, -4.56603, -4.01499)
 curve = SubResource("Curve3D_wxf4e")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath3"]
-transform = Transform3D(0.0260181, -0.00720098, -0.999539, -2.3282e-10, 0.999868, -0.0072035, 0.999615, 0.000187429, 0.0260162, -7.70702, 4.55051, 2.17354)
+transform = Transform3D(0.0260181, -0.00720098, -0.999539, -2.3282e-10, 0.999868, -0.00720349, 0.999615, 0.000187429, 0.0260162, -7.70702, 4.55051, 2.17354)
 loop = false
 
 [node name="SpawnPath4" type="Path3D" parent="."]
@@ -90,7 +90,6 @@ transform = Transform3D(0.00660218, 0, -0.999864, 0, 0.999906, 0, 0.999886, 0, 0
 loop = false
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 10.0
 autostart = true
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

@@ -16,10 +16,14 @@ var path  # This is the path that we'll use to track progress
 var wanderTime: float = 0.1  # NPC's can wander for this time
 var chillTime: float = 0.1  # How long an NPC should stop and stare
 
+@export var held_item: Resource
+
 @export var npc_name: String
 @export var audio: Array[AudioStream]
 
 var curr_audio = 0
+
+signal pickup_item
 
 
 func _random_number_range() -> float:
@@ -43,7 +47,6 @@ func _ready():
 	prevPosition = global_position
 	wanderTime = _random_number_range()
 	chillTime = wanderTime
-	pass  # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -85,10 +88,10 @@ func _process(delta):
 
 		else:
 			$AnimatedSprite3D.animation = "idle"
-	pass
 
 
 func _on_audio_timer_timeout():
+	print("test")
 	$AudioStreamPlayer3D.stop()
 	$AudioStreamPlayer3D.stream = audio[curr_audio]
 	$AudioStreamPlayer3D.play()
@@ -100,4 +103,8 @@ func _on_audio_timer_timeout():
 	else:
 		curr_audio = 0
 	$AudioTimer.set_wait_time(rng.randf_range(6.0, 20.0))
-	pass  # Replace with function body.
+
+
+func _on_body_entered(body: Node3D):
+	pickup_item.emit()
+	print(body)

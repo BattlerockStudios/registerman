@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://0qc14d2yosi"]
+
+[ext_resource type="Script" path="res://item.gd" id="1_7dwcv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m6eb5"]
+size = Vector3(4.99463, 6.57172, 1)
+
+[node name="Item" type="Node3D"]
+script = ExtResource("1_7dwcv")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_m6eb5")

@@ -149,12 +149,12 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="NPC" type="Node3D"]
+[node name="NPC" type="Node3D" groups=["npc"]]
 script = ExtResource("1_wmo0f")
 npc_name = "boy"
 audio = Array[AudioStream]([ExtResource("2_bgxg2"), ExtResource("3_ok0ys"), ExtResource("4_xfhmc"), ExtResource("5_chkkw"), ExtResource("6_qjhuf"), ExtResource("7_tde80"), ExtResource("8_24to8"), ExtResource("9_5xju8"), ExtResource("10_b8ebr"), ExtResource("11_bv7ad"), ExtResource("12_uxqvc")])
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." groups=["npc"]]
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 pixel_size = 0.015
 billboard = 2
 texture_filter = 0
