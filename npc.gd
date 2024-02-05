@@ -50,7 +50,7 @@ func _ready():
 	currPosition = global_position
 	prevPosition = global_position
 	wanderTime = _random_number_range(1, 2)
-	chillTime = wanderTime
+	chillTime = _random_number_range(3, 5)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -58,16 +58,16 @@ func _process(delta):
 	currPosition = global_position
 
 	timer -= delta
+
 	if wanderTime > 0:
 		wanderTime -= delta
+		if path.progress_ratio < completed:
+			path.progress_ratio += delta * .05
 	else:
 		chillTime -= delta
-		if chillTime < 0:
+		if chillTime <= 0:
 			wanderTime = _random_number_range(1, 2)
-			chillTime = wanderTime
-		else:
-			if path.progress_ratio < completed:
-				path.progress_ratio += delta * .05
+			chillTime = _random_number_range(3, 5)
 
 	if timer <= 0:
 		if currPosition != prevPosition:
