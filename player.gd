@@ -3,14 +3,16 @@ extends Node3D
 var currentPos: Vector2
 var prevPos: Vector2
 
-var min_rotation_y = -.05
-var max_rotation_y = .05
+var min_rotation = -75
+var max_rotation = 75
+var rotationModifier = 0.5
 
 
-func _process(delta):
-	# look_at(screen_point_to_ray(), Vector3.UP)
+func _process(_delta):
 	currentPos = get_viewport().get_mouse_position()
-	rotate_y(-(currentPos.x - prevPos.x) * 0.1 * delta)
-
+	var direction = -(currentPos.x - prevPos.x) * rotationModifier
+	rotate_y(deg_to_rad(direction))
+	var self_rotation = rotation_degrees
+	self_rotation.y = clamp(self_rotation.y, min_rotation, max_rotation)
+	rotation_degrees = self_rotation
 	prevPos = currentPos
-	pass
