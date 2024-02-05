@@ -22,16 +22,13 @@ var chillTime: float = 0.1  # How long an NPC should stop and stare
 @export var audio: Array[AudioStream]
 
 @onready var item = preload("res://item.tscn")
-@onready var doritos = preload("res://Snacks/Doritos.png")
-@onready var gum = preload("res://Snacks/Gum.png")
-@onready var lays = preload("res://Snacks/Lays.png")
-@onready var paper = preload("res://Snacks/Paper.png")
-@onready var tea = preload("res://Snacks/Tea.png")
-
-@onready var item_array = [doritos, gum, lays, paper, tea]
 
 var curr_audio = 0
 var rng: RandomNumberGenerator
+var min_wander_val = 10
+var max_wander_val = 12
+var min_chill_val = 5
+var max_chill_val = 10
 
 
 func _set_follow_point(followPath):
@@ -44,8 +41,8 @@ func _ready():
 	timer = startTime
 	currPosition = global_position
 	prevPosition = global_position
-	wanderTime = rng.randf_range(1, 2)
-	chillTime = rng.randf_range(5, 10)
+	wanderTime = rng.randf_range(min_wander_val, max_wander_val)
+	chillTime = rng.randf_range(min_chill_val, max_chill_val)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,8 +58,8 @@ func _process(delta):
 	else:
 		chillTime -= delta
 		if chillTime <= 0:
-			wanderTime = rng.randf_range(1, 2)
-			chillTime = rng.randf_range(5, 10)
+			wanderTime = rng.randf_range(min_wander_val, max_wander_val)
+			chillTime = rng.randf_range(min_chill_val, max_chill_val)
 
 	if timer <= 0:
 		if currPosition != prevPosition:
@@ -104,8 +101,6 @@ func _on_audio_timer_timeout():
 func _on_pickup_item():
 	if held_item:
 		return
-	var itm = item.instantiate()
-	var randIndex = rng.randf_range(0, len(item_array))
-	itm.get_node("Sprite3D").texture = item_array[randIndex]
-	held_item = itm
-	print(held_item)
+	held_item = item.instantiate()
+	add_child(held_item)
+	# print(held_item)

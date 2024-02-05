@@ -8,4 +8,3 @@ func _ready():
 func _on_item_pickup_trigger_body_entered(body: Node3D):
 	if body.name == "NPC":
 		body._on_pickup_item()
-	print(body)
