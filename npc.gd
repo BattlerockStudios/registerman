@@ -31,13 +31,7 @@ var chillTime: float = 0.1  # How long an NPC should stop and stare
 @onready var item_array = [doritos, gum, lays, paper, tea]
 
 var curr_audio = 0
-
-
-func _random_number_range(min_value, max_value) -> float:
-	var random_float_range = randf() * (max_value - min_value) + min_value
-
-	# print(random_float_range)
-	return random_float_range
+var rng: RandomNumberGenerator
 
 
 func _set_follow_point(followPath):
@@ -46,11 +40,12 @@ func _set_follow_point(followPath):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	rng = RandomNumberGenerator.new()
 	timer = startTime
 	currPosition = global_position
 	prevPosition = global_position
-	wanderTime = _random_number_range(1, 2)
-	chillTime = _random_number_range(3, 5)
+	wanderTime = rng.randf_range(1, 2)
+	chillTime = rng.randf_range(5, 10)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -66,8 +61,8 @@ func _process(delta):
 	else:
 		chillTime -= delta
 		if chillTime <= 0:
-			wanderTime = _random_number_range(1, 2)
-			chillTime = _random_number_range(3, 5)
+			wanderTime = rng.randf_range(1, 2)
+			chillTime = rng.randf_range(5, 10)
 
 	if timer <= 0:
 		if currPosition != prevPosition:
@@ -99,8 +94,6 @@ func _on_audio_timer_timeout():
 	$AudioStreamPlayer3D.stream = audio[curr_audio]
 	$AudioStreamPlayer3D.play()
 
-	var rng = RandomNumberGenerator.new()
-
 	if curr_audio < len(audio) - 1:
 		curr_audio += 1
 	else:
@@ -112,7 +105,7 @@ func _on_pickup_item():
 	if held_item:
 		return
 	var itm = item.instantiate()
-	var randIndex = _random_number_range(0, len(item_array))
+	var randIndex = rng.randf_range(0, len(item_array))
 	itm.get_node("Sprite3D").texture = item_array[randIndex]
 	held_item = itm
 	print(held_item)
