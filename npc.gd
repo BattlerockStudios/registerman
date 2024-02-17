@@ -22,6 +22,7 @@ var chillTime: float = 0.1  # How long an NPC should stop and stare
 @export var audio: Array[AudioStream]
 
 @onready var item = preload("res://item.tscn")
+var isHoldingItem = false
 
 var curr_audio = 0
 var rng: RandomNumberGenerator
@@ -38,6 +39,8 @@ func _set_follow_point(followPath):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng = RandomNumberGenerator.new()
+	held_item = $HeldItem
+	print(held_item)
 	timer = startTime
 	currPosition = global_position
 	prevPosition = global_position
@@ -99,8 +102,9 @@ func _on_audio_timer_timeout():
 
 
 func _on_pickup_item():
-	if held_item:
+	if isHoldingItem:
 		return
-	held_item = item.instantiate()
-	add_child(held_item)
-	# print(held_item)
+	var itm = item.instantiate()
+	held_item.add_child(itm)
+	print(held_item)
+	isHoldingItem = true

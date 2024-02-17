@@ -13,4 +13,3 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	var randIndex = rng.randf_range(0, len(item_array))
 	$Sprite3D.texture = item_array[randIndex]
-	print("test")

@@ -10,6 +10,7 @@ transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 script = ExtResource("1_7dwcv")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+sorting_offset = 0.1
 billboard = 1
 texture_filter = 0
 

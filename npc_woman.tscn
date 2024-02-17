@@ -172,4 +172,7 @@ autostart = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_6xihl")
 
+[node name="HeldItem" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.296651, 0)
+
 [connection signal="timeout" from="AudioTimer" to="." method="_on_audio_timer_timeout"]
