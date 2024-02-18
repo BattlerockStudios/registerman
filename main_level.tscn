@@ -9,7 +9,7 @@
 [sub_resource type="Environment" id="Environment_64k7t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_73ybl"]
-size = Vector3(10.9605, 1.69275, 1)
+size = Vector3(7.20094, 1.69275, 1)
 
 [node name="MainLevel" type="Node3D"]
 script = ExtResource("1_3shja")
@@ -84,7 +84,7 @@ spot_range = 10.0
 spot_angle = 60.0
 
 [node name="Player" parent="." instance=ExtResource("4_suk2n")]
-transform = Transform3D(0.015, 0, 0, 0, 0.015, 2.77556e-16, 0, -2.77556e-16, 0.015, 0, 1.21729, 0.264241)
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 5.55112e-16, 0, -5.55112e-16, 0.03, 0, 1.12188, 0.264241)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_qc8ef")
@@ -99,4 +99,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.98027, -0.148743, -2)
 shape = SubResource("BoxShape3D_73ybl")
 
+[node name="ItemDropoffTrigger" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.832388, -0.922404)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ItemDropoffTrigger"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.468204, 0.278238, 0)
+shape = SubResource("BoxShape3D_73ybl")
+
+[node name="DropOff" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18009, -0.0743001)
+
 [connection signal="body_entered" from="ItemPickupTrigger" to="." method="_on_item_pickup_trigger_body_entered"]
+[connection signal="body_entered" from="ItemDropoffTrigger" to="." method="_on_item_dropoff_trigger_body_entered"]

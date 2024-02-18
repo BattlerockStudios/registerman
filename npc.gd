@@ -16,7 +16,8 @@ var path  # This is the path that we'll use to track progress
 var wanderTime: float = 0.1  # NPC's can wander for this time
 var chillTime: float = 0.1  # How long an NPC should stop and stare
 
-@export var held_item: Node3D
+@export var itemHolder: Node3D
+@export var held_item: Node
 
 @export var npc_name: String
 @export var audio: Array[AudioStream]
@@ -39,8 +40,7 @@ func _set_follow_point(followPath):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng = RandomNumberGenerator.new()
-	held_item = $HeldItem
-	print(held_item)
+	itemHolder = $HeldItem
 	timer = startTime
 	currPosition = global_position
 	prevPosition = global_position
@@ -104,7 +104,13 @@ func _on_audio_timer_timeout():
 func _on_pickup_item():
 	if isHoldingItem:
 		return
-	var itm = item.instantiate()
-	held_item.add_child(itm)
-	print(held_item)
+	held_item = item.instantiate()
+	itemHolder.add_child(held_item)
 	isHoldingItem = true
+
+
+func _on_dropoff_item():
+	if !isHoldingItem:
+		return
+	itemHolder.remove_child(held_item)
+	isHoldingItem = false

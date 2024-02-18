@@ -4,7 +4,7 @@ var currentPos: Vector2
 var prevPos: Vector2
 
 var min_rotation = -75
-var max_rotation = 75
+var max_rotation = 45
 var rotationModifier = 0.5
 
 
