@@ -1,15 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwpyuphn6c37q"]
+[gd_scene load_steps=9 format=3 uid="uid://bwpyuphn6c37q"]
 
 [ext_resource type="Script" path="res://main_level.gd" id="1_3shja"]
 [ext_resource type="PackedScene" uid="uid://dtrkpvs5x36up" path="res://npc_spawner.tscn" id="2_6otht"]
 [ext_resource type="PackedScene" uid="uid://ceh2rhlwcjm0j" path="res://Level/Main_Scene.glb" id="3_hs4ck"]
 [ext_resource type="PackedScene" uid="uid://cr7mer5u56ern" path="res://player.tscn" id="4_suk2n"]
 [ext_resource type="AudioStream" uid="uid://c8cvi7im4uhgr" path="res://Audio/RegisterMan.wav" id="5_qc8ef"]
+[ext_resource type="PackedScene" uid="uid://0qc14d2yosi" path="res://item.tscn" id="6_01x7w"]
 
 [sub_resource type="Environment" id="Environment_64k7t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_73ybl"]
-size = Vector3(7.20094, 1.69275, 1)
+size = Vector3(11, 1.69275, 1)
 
 [node name="MainLevel" type="Node3D"]
 script = ExtResource("1_3shja")
@@ -96,7 +97,7 @@ autoplay = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ItemPickupTrigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.98027, -0.148743, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.08074, -0.148743, -2)
 shape = SubResource("BoxShape3D_73ybl")
 
 [node name="ItemDropoffTrigger" type="Area3D" parent="."]
@@ -107,7 +108,9 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.468204, 0.278238, 0)
 shape = SubResource("BoxShape3D_73ybl")
 
 [node name="DropOff" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18009, -0.0743001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51535, -0.0743001)
+
+[node name="Item" parent="DropOff" instance=ExtResource("6_01x7w")]
 
 [connection signal="body_entered" from="ItemPickupTrigger" to="." method="_on_item_pickup_trigger_body_entered"]
 [connection signal="body_entered" from="ItemDropoffTrigger" to="." method="_on_item_dropoff_trigger_body_entered"]

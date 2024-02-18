@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr7mer5u56ern"]
+[gd_scene load_steps=7 format=3 uid="uid://cr7mer5u56ern"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_r5yrg"]
 [ext_resource type="Texture2D" uid="uid://g2vt6durh3ow" path="res://Hand/Hand_Closed.png" id="2_y4l4d"]
@@ -23,6 +23,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u2l8p"]
+bounce = 0.1
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_p33t8"]
 size = Vector3(5, 3, 6)
 
@@ -39,6 +42,7 @@ autoplay = "open"
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32326, 0, -9.37925)
+physics_material_override = SubResource("PhysicsMaterial_u2l8p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, 0, 0.499999)

@@ -5,16 +5,15 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_m6eb5"]
 size = Vector3(4.99463, 6.57172, 1)
 
-[node name="Item" type="Node3D"]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+[node name="Item" type="RigidBody3D" node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_7dwcv")
+sprite = NodePath("Sprite3D")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 sorting_offset = 0.1
-billboard = 1
 texture_filter = 0
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 shape = SubResource("BoxShape3D_m6eb5")

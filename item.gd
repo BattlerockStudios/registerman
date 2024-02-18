@@ -9,7 +9,10 @@ extends Node3D
 @onready var item_array = [doritos, gum, lays, paper, tea]
 var rng = RandomNumberGenerator.new()
 
+@export var sprite: Sprite3D
+
 
 func _ready():
 	var randIndex = rng.randf_range(0, len(item_array))
-	$Sprite3D.texture = item_array[randIndex]
+	print(sprite)
+	sprite.texture = item_array[randIndex]
