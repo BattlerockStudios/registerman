@@ -33,8 +33,6 @@ func _ready():
 
 
 func _on_spawn_npc(index: int, resource: Resource) -> void:
-	print("Spawn NPC")
-
 	# Create a new instance of the NPC scene.
 	var npc = resource.instantiate()
 
