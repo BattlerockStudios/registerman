@@ -16,6 +16,8 @@ var path  # This is the path that we'll use to track progress
 var wanderTime: float = 0.1  # NPC's can wander for this time
 var chillTime: float = 0.1  # How long an NPC should stop and stare
 
+var isTalking: bool = false
+
 @export var itemHolder: Node3D
 @export var held_item: Node
 
@@ -46,10 +48,18 @@ func _ready():
 	prevPosition = global_position
 	wanderTime = rng.randf_range(min_wander_val, max_wander_val)
 	chillTime = rng.randf_range(min_chill_val, max_chill_val)
+	isTalking = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	# checks if the player is talking. This logic should be set on a trigger but I'm a lion and I eat monkies. 
+	if $AudioStreamPlayer3D.playing == true && isTalking == false:
+		isTalking = true
+	elif $AudioStreamPlayer3D.playing == false && isTalking == true:
+		isTalking = false
+	
 	currPosition = global_position
 
 	timer -= delta
@@ -70,23 +80,40 @@ func _process(delta):
 			var absDir = abs(direction)
 
 			if direction.x > 0 && absDir.x > absDir.z:
-				$AnimatedSprite3D.animation = "walk_sideways"
+				if isTalking:
+					$AnimatedSprite3D.animation = "walk_sideways_talking"
+				else:
+					$AnimatedSprite3D.animation = "walk_sideways"
+				
 				$AnimatedSprite3D.flip_h = false
 			elif direction.x < 0 && absDir.x > absDir.z:
-				$AnimatedSprite3D.animation = "walk_sideways"
+				if isTalking:
+					$AnimatedSprite3D.animation = "walk_sideways_talking"
+				else:
+					$AnimatedSprite3D.animation = "walk_sideways"
+					
 				$AnimatedSprite3D.flip_h = true
 			elif direction.z > 0 && absDir.z > absDir.x:
-				$AnimatedSprite3D.animation = "walk_forward"
+				if isTalking:
+					$AnimatedSprite3D.animation = "walk_forward_talking"
+				else:
+					$AnimatedSprite3D.animation = "walk_forward"
 			elif direction.z < 0 && absDir.z > absDir.x:
 				$AnimatedSprite3D.animation = "walk_away"
 			else:
-				$AnimatedSprite3D.animation = "idle"
+				if isTalking:
+					$AnimatedSprite3D.animation = "idle_talking"
+				else:
+					$AnimatedSprite3D.animation = "idle"
 
 			prevPosition = currPosition
 			timer = startTime
 
 		else:
-			$AnimatedSprite3D.animation = "idle"
+			if isTalking:
+				$AnimatedSprite3D.animation = "idle_talking"
+			else:
+				$AnimatedSprite3D.animation = "idle"
 
 
 func _on_audio_timer_timeout():

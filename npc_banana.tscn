@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://snqlvyynx7ny"]
+[gd_scene load_steps=45 format=3 uid="uid://snqlvyynx7ny"]
 
 [ext_resource type="Script" path="res://npc.gd" id="1_4adis"]
 [ext_resource type="AudioStream" uid="uid://cs8cdk8tbtolq" path="res://Audio/BananaMan V2/BananaMan-01.wav" id="2_cbgcq"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://cn4pu8xhgxrfe" path="res://Audio/BananaMan V2/BananaMan-09.wav" id="10_knfx2"]
 [ext_resource type="AudioStream" uid="uid://c4ta8tvrrigpd" path="res://Audio/BananaMan V2/BananaMan-10.wav" id="11_6urtr"]
 [ext_resource type="AudioStream" uid="uid://dc22wsf7apf0o" path="res://Audio/BananaMan V2/BananaMan-11.wav" id="12_tspo3"]
+[ext_resource type="Texture2D" uid="uid://c2mybsljt2ui4" path="res://Characters/BananaMan v1 Talking.png" id="14_r1csr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jpfsk"]
 atlas = ExtResource("2_whfeq")
@@ -28,6 +29,22 @@ region = Rect2(128, 0, 64, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aoj4b"]
 atlas = ExtResource("2_whfeq")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_set04"]
+atlas = ExtResource("14_r1csr")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgh1j"]
+atlas = ExtResource("14_r1csr")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmund"]
+atlas = ExtResource("14_r1csr")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa6cv"]
+atlas = ExtResource("14_r1csr")
 region = Rect2(192, 0, 64, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ucbu"]
@@ -62,6 +79,22 @@ region = Rect2(128, 384, 64, 128)
 atlas = ExtResource("2_whfeq")
 region = Rect2(192, 384, 64, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_85006"]
+atlas = ExtResource("14_r1csr")
+region = Rect2(0, 256, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tspra"]
+atlas = ExtResource("14_r1csr")
+region = Rect2(64, 256, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twwr2"]
+atlas = ExtResource("14_r1csr")
+region = Rect2(128, 256, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7rmw"]
+atlas = ExtResource("14_r1csr")
+region = Rect2(192, 256, 64, 128)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_254j6"]
 atlas = ExtResource("2_whfeq")
 region = Rect2(0, 128, 64, 128)
@@ -76,6 +109,22 @@ region = Rect2(128, 128, 64, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q8eo0"]
 atlas = ExtResource("2_whfeq")
+region = Rect2(192, 128, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygt7b"]
+atlas = ExtResource("14_r1csr")
+region = Rect2(0, 128, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2dys"]
+atlas = ExtResource("14_r1csr")
+region = Rect2(64, 128, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yi056"]
+atlas = ExtResource("14_r1csr")
+region = Rect2(128, 128, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2so8u"]
+atlas = ExtResource("14_r1csr")
 region = Rect2(192, 128, 64, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dealf"]
@@ -96,6 +145,23 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_set04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgh1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmund")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa6cv")
+}],
+"loop": true,
+"name": &"idle_talking",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -133,6 +199,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_85006")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tspra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twwr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7rmw")
+}],
+"loop": true,
+"name": &"walk_forward_talking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_254j6")
 }, {
 "duration": 1.0,
@@ -147,6 +230,23 @@ animations = [{
 "loop": true,
 "name": &"walk_sideways",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygt7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2dys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yi056")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2so8u")
+}],
+"loop": true,
+"name": &"walk_sideways_talking",
+"speed": 5.0
 }]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i7w4w"]
@@ -161,7 +261,7 @@ pixel_size = 0.015
 billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_dealf")
-animation = &"walk_sideways"
+animation = &"idle_talking"
 autoplay = "idle"
 
 [node name="AudioTimer" type="Timer" parent="."]
