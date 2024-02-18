@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwpyuphn6c37q"]
+[gd_scene load_steps=11 format=3 uid="uid://bwpyuphn6c37q"]
 
 [ext_resource type="Script" path="res://main_level.gd" id="1_3shja"]
 [ext_resource type="PackedScene" uid="uid://dtrkpvs5x36up" path="res://npc_spawner.tscn" id="2_6otht"]
 [ext_resource type="PackedScene" uid="uid://ceh2rhlwcjm0j" path="res://Level/Main_Scene.glb" id="3_hs4ck"]
 [ext_resource type="PackedScene" uid="uid://cr7mer5u56ern" path="res://player.tscn" id="4_suk2n"]
 [ext_resource type="AudioStream" uid="uid://c8cvi7im4uhgr" path="res://Audio/RegisterMan.wav" id="5_qc8ef"]
+[ext_resource type="PackedScene" uid="uid://0qc14d2yosi" path="res://item.tscn" id="6_01x7w"]
 
 [sub_resource type="Environment" id="Environment_64k7t"]
 
@@ -102,9 +103,6 @@ shape = SubResource("ConcavePolygonShape3D_sq6k7")
 
 [node name="Player" parent="." instance=ExtResource("4_suk2n")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 1.85037e-15, 0, -1.85037e-15, 0.1, 0, 1.12188, 0.264241)
-axis_lock_angular_x = true
-axis_lock_angular_z = true
-mass = 10.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_qc8ef")
@@ -128,6 +126,12 @@ shape = SubResource("BoxShape3D_73ybl")
 
 [node name="DropOff" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51535, -0.0743001)
+
+[node name="Item" parent="DropOff" instance=ExtResource("6_01x7w")]
+freeze = false
+
+[node name="Item2" parent="DropOff" instance=ExtResource("6_01x7w")]
+freeze = false
 
 [connection signal="body_entered" from="ItemPickupTrigger" to="." method="_on_item_pickup_trigger_body_entered"]
 [connection signal="body_entered" from="ItemDropoffTrigger" to="." method="_on_item_dropoff_trigger_body_entered"]

@@ -29,7 +29,7 @@ size = Vector3(5, 3, 6)
 [node name="Player" type="RigidBody3D"]
 axis_lock_angular_x = true
 axis_lock_angular_z = true
-mass = 10.0
+mass = 100.0
 gravity_scale = 0.0
 freeze_mode = 1
 script = ExtResource("1_r5yrg")
