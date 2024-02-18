@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cr7mer5u56ern"]
+[gd_scene load_steps=6 format=3 uid="uid://cr7mer5u56ern"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_r5yrg"]
 [ext_resource type="Texture2D" uid="uid://g2vt6durh3ow" path="res://Hand/Hand_Closed.png" id="2_y4l4d"]
@@ -23,27 +23,24 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u2l8p"]
-bounce = 0.1
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_p33t8"]
 size = Vector3(5, 3, 6)
 
-[node name="Player" type="Node3D"]
-transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
+[node name="Player" type="RigidBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+mass = 10.0
+gravity_scale = 0.0
+freeze_mode = 1
 script = ExtResource("1_r5yrg")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(0.35, 0, 0, 0, -1.5299e-08, 0.35, 0, -0.35, -1.5299e-08, 0, 0, 0)
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_my8c0")
 animation = &"open"
 autoplay = "open"
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32326, 0, -9.37925)
-physics_material_override = SubResource("PhysicsMaterial_u2l8p")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, 0, 0.499999)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.701949, 0, -3.28336)
 shape = SubResource("BoxShape3D_p33t8")

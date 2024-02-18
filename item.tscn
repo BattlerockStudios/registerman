@@ -6,6 +6,7 @@
 size = Vector3(4.99463, 6.57172, 1)
 
 [node name="Item" type="RigidBody3D" node_paths=PackedStringArray("sprite")]
+freeze = true
 script = ExtResource("1_7dwcv")
 sprite = NodePath("Sprite3D")
 

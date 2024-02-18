@@ -105,6 +105,7 @@ func _on_pickup_item():
 	if isHoldingItem:
 		return
 	held_item = item.instantiate()
+	held_item.freeze = true
 	itemHolder.add_child(held_item)
 	isHoldingItem = true
 
@@ -112,5 +113,6 @@ func _on_pickup_item():
 func _on_dropoff_item():
 	if !isHoldingItem:
 		return
+	held_item.freeze = false
 	itemHolder.remove_child(held_item)
 	isHoldingItem = false
